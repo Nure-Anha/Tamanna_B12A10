@@ -1,12 +1,34 @@
-import React from 'react';
-import { NavLink } from 'react-router';
+import React, { useContext } from 'react';
+import { Link, NavLink, useNavigate } from 'react-router';
+import { AuthContext } from '../Pages/Authentication/Auth/AuthContext';
 
 const Header = () => {
 
+    // handleLogoName
+    const navigate = useNavigate() ;
+    const handleLogoName = () => {
+        navigate("/") ;
+    }
+
+    const {signOutGoogle , user} = useContext(AuthContext) ;
+    console.log(user) ;
+
+    // handleLogOut 
+    const handleLogOut = () => {
+        signOutGoogle()
+        .then(() => {
+        // Sign-out successful.
+        }).catch(() => {
+        // An error happened.
+        });
+    }
+
+
     // links 
     const links = <>
-    <li className='font-bold'><NavLink to={"/"}>Home</NavLink></li>
-    <li><NavLink to={"/pets&supplies"}>Pets & Supplies</NavLink></li>
+    <li className='font-bold '><NavLink to={"/"}>Home</NavLink></li>
+    <li className='font-bold'><NavLink to={"/pets&supplies"}>Pets & Supplies</NavLink></li>
+    <li className='font-bold'><NavLink to={"/addlisting"}>Add Listing</NavLink></li>
     </>
     return (
         <div className="navbar bg-base-100 shadow-sm">
@@ -23,7 +45,7 @@ const Header = () => {
                         }
                     </ul>
                 </div>
-                    <div className='flex cursor-pointer'>
+                    <div onClick={handleLogoName} className='flex cursor-pointer'>
                         <img className='mt-3 w-12 h-10 rounded-full' src="/my_assets/petLogo.jpg" alt="" />
                         <a  className="text-3xl lg:text-5xl font-bold bg-linear-to-r from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90% bg-clip-text text-transparent mt-2">PawsNest</a>
                     </div>
@@ -37,8 +59,20 @@ const Header = () => {
                 </ul>
          </div>
                 <div className="navbar-end">
-                    <a className="mr-2.5 btn border-blue-500 hover:bg-blue-500 hover:text-white">Login</a>
-                    <a className="btn border-violet-500 hover:bg-violet-500 hover:text-white">Register</a>
+                    {/* <div>
+                        <Link className="mr-2.5 btn border-blue-500 hover:bg-blue-500 hover:text-white" to={'/login'}>Login</Link>
+                        <Link className="btn border-violet-500 hover:bg-violet-500 hover:text-white" to={'/register'}>Register</Link>
+                    </div> */}
+                    {
+                        user ? <div className='flex space-x-2.5 tooltip tooltip-left' data-tip={user.displayName} >
+                        <img className='w-10 h-10 rounded-full' src={user.photoURL} alt="" />
+                        <button onClick={handleLogOut} className="mr-2.5 btn border-blue-500 hover:bg-blue-500 hover:text-white">Logout</button>
+                        </div> :  <div>
+                        <Link className="mr-2.5 btn border-blue-500 hover:bg-blue-500 hover:text-white" to={'/login'}>Login</Link>
+                        <Link className="btn border-violet-500 hover:bg-violet-500 hover:text-white" to={'/register'}>Register</Link>
+                        </div>
+                    }
+                    
                 </div>
         </div>
     );
