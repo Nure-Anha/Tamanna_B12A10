@@ -27,7 +27,7 @@ const Header = () => {
     // links 
     const links = <>
     <li className='font-bold '><NavLink to={"/"}>Home</NavLink></li>
-    <li className='font-bold'><NavLink to={"/pets&supplies"}>Pets & Supplies</NavLink></li>
+    <li className='font-bold'><NavLink to={"/petsAndsupplies"}>Pets & Supplies</NavLink></li>
     <li className='font-bold'><NavLink to={"/addlisting"}>Add Listing</NavLink></li>
     </>
     return (

@@ -1,5 +1,6 @@
 import React, {useContext, useState } from 'react';
 import { AuthContext } from './Authentication/Auth/AuthContext';
+import axios from 'axios';
 
 const AddListing = () => {
 
@@ -39,17 +40,24 @@ const AddListing = () => {
 
 
         // Send Add Listing to backend
-        const addLising  = {
+        const addListingFormgData  = {
             name : name ,
             category : category ,
-            price : price ,
+            price : categoryy === 'Pets' ? 0 : parseInt(price) ,
             location : location ,
             description : description ,
             imageURL : imageURL ,
             pickupdate : pickupdate ,
             email : user?.email
         }
-        console.log("addLising Items :", addLising) ;
+        console.log("addListingFormgData Items :", addListingFormgData) ;
+
+        // pass data to backend
+        axios.post('http://localhost:3000/addlisting' , addListingFormgData)  //sending data to backend
+        .then(resAddListing => {
+            console.log("resAddListing :" , resAddListing) ;
+        })
+
     }
 
 
