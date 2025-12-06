@@ -1,6 +1,7 @@
 import React, {useContext, useState } from 'react';
 import { AuthContext } from './Authentication/Auth/AuthContext';
 import axios from 'axios';
+import { toast } from 'react-toastify';
 
 const AddListing = () => {
 
@@ -37,6 +38,8 @@ const AddListing = () => {
         console.log("email :" , email) ;
 
 
+        toast.success('Pet/Product List is added!')
+        e.target.reset() ;
 
 
         // Send Add Listing to backend

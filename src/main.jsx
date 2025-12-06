@@ -19,6 +19,7 @@ import Login from './Pages/Authentication/Login.jsx';
 import AuthProvider from './Pages/Authentication/Auth/AuthProvider.jsx';
 import PetsAndSupplies from './Pages/PetsAndSupplies.jsx';
 import FullData from './Pages/FullData.jsx';
+import ListingDetails from './Pages/ListingDetails.jsx';
 
 
 const router = createBrowserRouter([
@@ -38,6 +39,7 @@ const router = createBrowserRouter([
       {path:'register' , Component:Register} ,
       {path:'petsAndsupplies' , Component:PetsAndSupplies} ,
       {path:'fulldata' , Component:FullData} ,
+      {path:'listingdetails/:id' , Component:ListingDetails} ,
       
     ]
   },

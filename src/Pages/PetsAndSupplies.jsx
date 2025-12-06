@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router';
 
 const PetsAndSupplies = () => {
 
@@ -27,13 +28,18 @@ const PetsAndSupplies = () => {
     const filterData = f_data.filter(j => j.category === categoryFilter || categoryFilter === '') ;
 
 
+    // handleSeeDetails
+        const navigate = useNavigate() ;
+        const handleSeeDetails = (id) => {
+            navigate(`/listingdetails/${id}`) ;
 
+        }
 
 
     return (
         <div className='bg-[#f1f6fa] p-10'>
 
-            <h3 className='text-center font-bold text-5xl mb-15 mt-5'>All your Pets & Supplies!</h3>
+            <h3 className='text-center font-bold text-5xl mb-15 mt-5 text-black'>All your Pets & Supplies!</h3>
 
             {/* filter by categry  */}
             <div className="flex justify-end mb-5">
@@ -63,7 +69,7 @@ const PetsAndSupplies = () => {
                         </div>
                         <p className='mx-auto font-bold text-orange-600 text-2xl'>{i?.price} BDT </p>
                         <div className="card-actions justify-center mt-5">
-                        <button className="btn btn-primary p-5">See Details</button>
+                        <button onClick={() => handleSeeDetails(i?._id)} className="btn btn-primary p-5">See Details</button>
                         </div>
                     </div>
                 </div>)
