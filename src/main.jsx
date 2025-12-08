@@ -20,6 +20,8 @@ import AuthProvider from './Pages/Authentication/Auth/AuthProvider.jsx';
 import PetsAndSupplies from './Pages/PetsAndSupplies.jsx';
 import FullData from './Pages/FullData.jsx';
 import ListingDetails from './Pages/ListingDetails.jsx';
+import MyListings from './Pages/MyListings.jsx';
+import UpdateLisitngs from './Pages/UpdateLisitngs.jsx';
 
 
 const router = createBrowserRouter([
@@ -40,6 +42,8 @@ const router = createBrowserRouter([
       {path:'petsAndsupplies' , Component:PetsAndSupplies} ,
       {path:'fulldata' , Component:FullData} ,
       {path:'listingdetails/:id' , Component:ListingDetails} ,
+      {path:'mylistings' , Component:MyListings} ,
+      {path:'updatelistings/:id' , Component:UpdateLisitngs} ,  
       
     ]
   },

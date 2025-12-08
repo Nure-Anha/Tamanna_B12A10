@@ -34,7 +34,7 @@ const AddListing = () => {
         console.log("imageURL :" , imageURL) ;
         const pickupdate = e.target.pickupdate.value ;
         console.log("pickupdate :" , pickupdate) ;
-        const email = e.target.email.value ;
+        const email = user?.email ;
         console.log("email :" , email) ;
 
 

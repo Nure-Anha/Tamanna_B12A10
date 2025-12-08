@@ -9,27 +9,25 @@ const ListingDetails = () => {
     const {user} = useContext(AuthContext) ;
 
 
-    // Data fetch from Backend 
-         const [f_data , setF_data] = useState([]) ;
-        //  useEffect( () => {} , [] )
-        useEffect( () => {
-            fetch('http://localhost:3000/fulldata')
-            .then(res => res.json())
-            .then(data => setF_data(data))
-            .catch(errors => console.log("Error Occured in Data Fetching :", errors)) 
-        } , [] )
-        console.log("Fetched Data : ", f_data) ;
-
-
 
     // collecting id from dynamic route
     const params = useParams() ;
     console.log(params) ;
     const idOfParams = params.id ;
     console.log(idOfParams) ;
+ 
+    
+    const [specificID_Data , setSpecificID_Data] = useState([]) ;
+    //  useEffect( () => {} , [] )
+    useEffect( () => {
+        fetch(`http://localhost:3000/listingdetails/${idOfParams}`)
+        .then(res => res.json())
+        .then(data => setSpecificID_Data(data))
+        .catch(errors => console.log("Error Occured in Data Fetching :", errors)) 
+    } , [idOfParams] )
+    console.log("Fetched specific clicked id's Data using backend: ", specificID_Data) ;
 
-    const matchedItem = f_data.find(k => k._id.toString() === idOfParams.toString()) ;
-    console.log('matched Item :' , matchedItem) ;
+
 
    
     // handlePlaceOrder
@@ -40,11 +38,11 @@ const ListingDetails = () => {
         console.log(buyername) ;
         const email = user?.email ;
         console.log(email) ;
-        const product_listing_id = matchedItem?._id ;
+        const product_listing_id = specificID_Data?._id ;
         console.log(product_listing_id) ;
-        const product_listing_name = matchedItem?.name ;
+        const product_listing_name = specificID_Data?.name ;
         console.log(product_listing_name) ;
-        const quantity = matchedItem?.category === 'Pets' ? 1 : parseInt(e.target.quantity.value) ;
+        const quantity = specificID_Data?.category === 'Pets' ? 1 : parseInt(e.target.quantity.value) ;
         console.log(quantity) ;
         const address = e.target.address.value ;
         console.log(address) ;
@@ -84,20 +82,20 @@ const ListingDetails = () => {
         <div className='bg-[#f1f6fa] p-10'>
             <div className='flex flex-col space-y-10 xl:space-x-5 xl:space-y-0 lg:flex-row pt-15 pl-10 pr-12 '>
             <div>
-                <img className='w-150 rounded-2xl shadow-2xl' src={matchedItem?.imageURL} alt="" />
+                <img className='w-150 rounded-2xl shadow-2xl' src={specificID_Data?.imageURL} alt="" />
             </div>
 
             <div className='flex flex-col space-y-10 lg:flex-row lg:space-y-0'>
                 <div className='text-gray-400 font-medium'>
-                    <h3 className='font-bold text-3xl mb-5 text-black'>{matchedItem?.name} </h3>
-                    <p className='mb-5'>Category: <span className='text-blue-600'>{matchedItem?.category} </span> </p>
-                    <p className='mb-5'>Owner's Email: <span className='text-blue-600'>{matchedItem?.email}</span> </p>
-                    <p className='mb-5'>Location: <span className='text-orange-400' >{matchedItem?.location}</span> </p>
-                    <p className='mb-5'><span className='text-orange-500 text-3xl'>{matchedItem?.price} BDT</span> </p>
+                    <h3 className='font-bold text-3xl mb-5 text-black'>{specificID_Data?.name} </h3>
+                    <p className='mb-5'>Category: <span className='text-blue-600'>{specificID_Data?.category} </span> </p>
+                    <p className='mb-5'>Owner's Email: <span className='text-blue-600'>{specificID_Data?.email}</span> </p>
+                    <p className='mb-5'>Location: <span className='text-orange-400' >{specificID_Data?.location}</span> </p>
+                    <p className='mb-5'><span className='text-orange-500 text-3xl'>{specificID_Data?.price} BDT</span> </p>
 
                     <p className='font-normal text-gray-300 mb-15'><hr /></p>
 
-                    <p className='xl:w-170 font-normal text-gray-500'>{matchedItem?.description}</p>
+                    <p className='xl:w-170 font-normal text-gray-500'>{specificID_Data?.description}</p>
 
                 </div>
             </div>
@@ -117,19 +115,19 @@ const ListingDetails = () => {
                         <input type="email" name='email' className="input" placeholder={ user?.email} readOnly />
 
                         <label className="label">Product/Listing Id</label>
-                        <input type="text" name='product_listing_id' className="input" placeholder={matchedItem?._id} readOnly />
+                        <input type="text" name='product_listing_id' className="input" placeholder={specificID_Data?._id} readOnly />
 
 
                         <label className="label">Product/Listing Name</label>
-                        <input type="text" name='product_listing_name' className="input" placeholder={matchedItem?.name} readOnly />
+                        <input type="text" name='product_listing_name' className="input" placeholder={specificID_Data?.name} readOnly />
 
 
                         <label className="label">Quantity</label>
-                        <input type="number" name='quantity' className="input" placeholder={matchedItem?.category === 'Pets' ? '1 (Fixed for Pets)' : 'Enter Quantity'} readOnly={matchedItem?.category === 'Pets'} />
+                        <input type="number" name='quantity' className="input" placeholder={specificID_Data?.category === 'Pets' ? '1 (Fixed for Pets)' : 'Enter Quantity'} readOnly={specificID_Data?.category === 'Pets'} />
 
 
                         <label className="label">Price</label>
-                        <input type="number" name='price' className="input" placeholder={matchedItem?.price} readOnly />
+                        <input type="number" name='price' className="input" placeholder={specificID_Data?.price} readOnly />
 
 
                         <label className="label">Address</label>

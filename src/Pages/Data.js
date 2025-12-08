@@ -12,7 +12,7 @@ export const allData = [
                     Waiting for a caring forever home.`,
         imageURL: "https://i.ibb.co.com/Dfybp7Kp/Golden-Retriever-Puppy.jpg",
         pickupdate: "2025-01-12",
-        email: "tamanna1272@gmail.com"
+        email: "mirajulislam987@gmail.com"
     },
 
     {
@@ -28,7 +28,7 @@ export const allData = [
                     Ideal for peaceful home environments.`,
         imageURL: "https://i.ibb.co.com/ccbns4fn/Persian-Cat.jpg",
         pickupdate: "2025-01-15",
-        email: "tamanna1272@gmail.com"
+        email: "mirajulislam987@gmail.com"
     },
 
     {
@@ -44,7 +44,7 @@ export const allData = [
                     Best for loving indoor homes.`,
         imageURL: "https://i.ibb.co.com/Y4bXGMB4/Siamese-Kitten.jpg",
         pickupdate: "2025-01-18",
-        email: "tamanna1272@gmail.com"
+        email: "mirajulislam987@gmail.com"
     },
 
     {
@@ -60,7 +60,7 @@ export const allData = [
                     Great choice for active families.`,
         imageURL: "https://i.ibb.co.com/JR2ybZtR/German-Shepherd.jpg",
         pickupdate: "2025-01-21",
-        email: "tamanna1272@gmail.com"
+        email: "mirajulislam987@gmail.com"
     },
 
     {
@@ -76,7 +76,7 @@ export const allData = [
                     Perfect for bird lovers.`,
         imageURL: "https://i.ibb.co.com/QFN80WbN/Parrot-Green-Indian-Ringneck.jpg",
         pickupdate: "2025-01-25",
-        email: "tamanna1272@gmail.com"
+        email: "mirajulislam987@gmail.com"
     },
 
     {
@@ -92,7 +92,7 @@ export const allData = [
                     Needs a clean indoor cage setup.`,
         imageURL: "https://i.ibb.co.com/x8gSxbmQ/Himalayan-Rabbit.jpg",
         pickupdate: "2025-01-28",
-        email: "tamanna1272@gmail.com"
+        email: "mirajulislam987@gmail.com"
     },
 
 
@@ -110,7 +110,7 @@ export const allData = [
                     100% safe and vet recommended.`,
         imageURL: "https://i.ibb.co.com/cX36Qz8m/Premium-Dog-Food-Beef-Flavor.jpg",
         pickupdate: "2025-02-01",
-        email: "tamanna1272@gmail.com"
+        email: "mirajulislam987@gmail.com"
     },
 
     {
@@ -126,7 +126,7 @@ export const allData = [
                     Approved by certified veterinarians.`,
         imageURL: "https://i.ibb.co.com/prvsX40W/Cat-Dry-Food-Tuna-Mix.jpg",
         pickupdate: "2025-02-03",
-        email: "tamanna1272@gmail.com"
+        email: "mirajulislam987@gmail.com"
     },
 
     {
@@ -142,7 +142,7 @@ export const allData = [
                     Ideal for both baby and adult rabbits.`,
         imageURL: "https://i.ibb.co.com/G3V9S5Sn/Rabbit-Food-Pellets.jpg",
         pickupdate: "2025-02-06",
-        email: "tamanna1272@gmail.com"
+        email: "mirajulislam987@gmail.com"
     },
 
     {
@@ -158,7 +158,7 @@ export const allData = [
                     Great for daily feeding.`,
         imageURL: "https://i.ibb.co.com/CKmMz4Fz/Bird-Seed-Mix-Parrot-Special.jpg",
         pickupdate: "2025-02-07",
-        email: "tamanna1272@gmail.com"
+        email: "mirajulislam987@gmail.com"
     },
 
     {
@@ -174,7 +174,7 @@ export const allData = [
                     Perfect for kittens aged 1-12 months.`,
         imageURL: "https://i.ibb.co.com/k2VrCkZ7/Kitten-Starter-Food.jpg",
         pickupdate: "2025-02-09",
-        email: "tamanna1272@gmail.com"
+        email: "mirajulislam987@gmail.com"
     },
 
     {
@@ -190,7 +190,7 @@ export const allData = [
                     Safe for daily use.`,
         imageURL: "https://i.ibb.co.com/BKtbncV6/Puppy-Milk-Replacer.jpg",
         pickupdate: "2025-02-11",
-        email: "tamanna1272@gmail.com"
+        email: "mirajulislam987@gmail.com"
     },
 
 
@@ -208,7 +208,7 @@ export const allData = [
                     Perfect for daily walks and training.`,
         imageURL: "https://i.ibb.co.com/YFVzJtSG/Dog-Collar-Adjustable-Nylon.jpg",
         pickupdate: "2025-02-13",
-        email: "tamanna1272@gmail.com"
+        email: "mirajulislam987@gmail.com"
     },
 
     {
@@ -224,7 +224,7 @@ export const allData = [
                     Easy to assemble and maintain.`,
         imageURL: "https://i.ibb.co.com/PzmDCvLT/Cat-Scratching-Post.jpg",
         pickupdate: "2025-02-15",
-        email: "tamanna1272@gmail.com"
+        email: "mirajulislam987@gmail.com"
     },
 
     {
@@ -240,7 +240,7 @@ export const allData = [
                     Perfect for indoor use.`,
         imageURL: "https://i.ibb.co.com/4wjpWP9j/Rabbit-Cage-Medium-Size.jpg",
         pickupdate: "2025-02-17",
-        email: "tamanna1272@gmail.com"
+        email: "mirajulislam987@gmail.com"
     },
 
     {
@@ -256,7 +256,7 @@ export const allData = [
                     Ideal for small and medium parrots.`,
         imageURL: "https://i.ibb.co.com/G3NP1n3w/Parrot-Hanging-Toy-Set.jpg",
         pickupdate: "2025-02-19",
-        email: "tamanna1272@gmail.com"
+        email: "mirajulislam987@gmail.com"
     },
 
     {
@@ -272,7 +272,7 @@ export const allData = [
                     Perfect for travel and vet visits.`,
         imageURL: "https://i.ibb.co.com/9HL6jXnz/Pet-Travel-Carrier.jpg",
         pickupdate: "2025-02-22",
-        email: "tamanna1272@gmail.com"
+        email: "mirajulislam987@gmail.com"
     },
 
     {
@@ -288,7 +288,7 @@ export const allData = [
                     Stylish and weatherproof.`,
         imageURL: "https://i.ibb.co.com/7NzbLMmW/Dog-Leash-Heavy-Duty.jpg",
         pickupdate: "2025-02-25",
-        email: "tamanna1272@gmail.com"
+        email: "mirajulislam987@gmail.com"
     },
 
 
@@ -306,7 +306,7 @@ export const allData = [
                     Vet tested and approved.`,
         imageURL: "https://i.ibb.co.com/wh1rmC8M/Anti-Flea-Dog-Shampoo.jpg",
         pickupdate: "2025-03-01",
-        email: "tamanna1272@gmail.com"
+        email: "mirajulislam987@gmail.com"
     },
 
     {
@@ -322,7 +322,7 @@ export const allData = [
                     Durable and long-lasting.`,
         imageURL: "https://i.ibb.co.com/C5NZ01Zj/Cat-Grooming-Brush.jpg",
         pickupdate: "2025-03-03",
-        email: "tamanna1272@gmail.com"
+        email: "mirajulislam987@gmail.com"
     },
 
     {
@@ -338,7 +338,7 @@ export const allData = [
                     Comes in a resealable pack.`,
         imageURL: "https://i.ibb.co.com/99KjjLbQ/Paw-Cleaning-Wipes.jpg",
         pickupdate: "2025-03-05",
-        email: "tamanna1272@gmail.com"
+        email: "mirajulislam987@gmail.com"
     },
 
     {
@@ -354,7 +354,7 @@ export const allData = [
                 Recommended for weekly care.`,
         imageURL: "https://i.ibb.co.com/yckDz4Lm/Dog-Ear-Cleaner.jpg",
         pickupdate: "2025-03-07",
-        email: "tamanna1272@gmail.com"
+        email: "mirajulislam987@gmail.com"
     },
 
     {
@@ -370,7 +370,7 @@ export const allData = [
                     Easy to clean and store.`,
         imageURL: "https://i.ibb.co.com/RkJWB7v8/Pet-Nail-Clipper.jpg",
         pickupdate: "2025-03-09",
-        email: "tamanna1272@gmail.com"
+        email: "mirajulislam987@gmail.com"
     },
 
     {
@@ -386,7 +386,7 @@ export const allData = [
                     A must-have for pet households.`,
         imageURL: "https://i.ibb.co.com/svjG5hMM/Pet-Odor-Remover-Spray.jpg",
         pickupdate: "2025-03-11",
-        email: "tamanna1272@gmail.com"
+        email: "mirajulislam987@gmail.com"
     }
 
 ]
