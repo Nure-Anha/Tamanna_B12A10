@@ -3,21 +3,24 @@ import { useNavigate } from 'react-router';
 
 const PetsAndSupplies = () => {
 
+     // Filter by categry
+    const [categoryFilter, setCategoryFilter] = useState("");
+
+    
     // Data fetch from Backend 
      const [f_data , setF_data] = useState([]) ;
     //  useEffect( () => {} , [] )
     useEffect( () => {
-        fetch('http://localhost:3000/fulldata')
+        fetch(`http://localhost:3000/fulldata?category=${categoryFilter}`)
         .then(res => res.json())
         .then(data => setF_data(data))
         .catch(errors => console.log("Error Occured in Data Fetching :", errors)) 
-    } , [] )
+    } , [categoryFilter] )
     console.log("Fetched Data : ", f_data) ;
 
 
 
-    // Filter by categry
-    const [categoryFilter, setCategoryFilter] = useState("");
+   
 
     // handleFilterByCtgry
     const handleFilterByCtgry = (e) => {
@@ -25,7 +28,7 @@ const PetsAndSupplies = () => {
         setCategoryFilter(e.target.value) ; 
     }
 
-    const filterData = f_data.filter(j => j.category === categoryFilter || categoryFilter === '') ;
+    // const filterData = f_data.filter(j => j.category === categoryFilter || categoryFilter === '') ;
 
 
     // handleSeeDetails
@@ -56,7 +59,7 @@ const PetsAndSupplies = () => {
 
             <div className='grid grid-cols-3 gap-10'>
                 {
-                filterData.map(i => <div key={i?._id} className="card bg-base-100 shadow-2xl p-5">
+                f_data.map(i => <div key={i?._id} className="card bg-base-100 shadow-2xl p-5">
                     <figure>
                         <img className=' object-cover w-full h-60 rounded-2xl' src={i?.imageURL}  alt="Shoes" />
                     </figure>
