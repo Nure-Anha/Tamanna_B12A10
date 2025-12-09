@@ -64,8 +64,9 @@ const MyOrders = () => {
 
     return (
         <div className='bg-[#f1f6fa] p-10'>
-            <h3 className="text-3xl font-bold mb-5 text-center">My Orders</h3>
-            <button onClick={generatePDF} className="ml-270 btn bg-green-600 text-white hover:bg-green-800 mb-4">Download PDF Report</button>
+            
+            {
+                myOrdersData.length !== 0 ? <div> <h3 className="text-3xl font-bold mb-5 text-center">My Orders</h3> <button onClick={generatePDF} className="ml-270 btn bg-green-600 text-white hover:bg-green-800 mb-4">Download PDF Report</button>
             <div className="overflow-x-auto rounded-box border border-base-content/5 bg-base-100">
                 <table className="table">
                     {/* head */}
@@ -97,7 +98,9 @@ const MyOrders = () => {
                         } 
                     </tbody>
                 </table>
-            </div>
+                </div>
+              </div> : <h3 className='font-bold text-5xl text-center text-red-500'>No Orders Yet!!! !!! </h3>
+            }
         </div>
     );
 };
