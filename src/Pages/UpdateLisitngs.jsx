@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from './Authentication/Auth/AuthContext';
-import { toast } from 'react-toastify';
+import { toast, ToastContainer } from 'react-toastify';
 import axios from 'axios';
 import { useNavigate, useParams } from 'react-router';
 
@@ -60,9 +60,11 @@ const UpdateLisitngs = () => {
             console.log("email :" , email) ;
     
     
-            toast.success('List Updated Successfully!') ;
             e.target.reset() ; 
-            navigate("/mylistings")
+            toast.success('List Updated Successfully!') ;
+            setTimeout(()=>{
+                navigate("/mylistings")
+            } , 1600)
 
 
         // put updated changes to backend
@@ -141,6 +143,7 @@ const UpdateLisitngs = () => {
                     </div>
                 </div>
             </div>
+            <ToastContainer></ToastContainer>
         </div>
     );
 };

@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from './Authentication/Auth/AuthContext';
 import { useNavigate } from 'react-router';
 import axios from 'axios';
+import { toast } from 'react-toastify';
 
 const MyListings = () => {
 
@@ -10,11 +11,15 @@ const MyListings = () => {
      
         
     const [myListings_Data , setMyListings_Data] = useState([]) ;
+    const [loader , setLoader] = useState(true) ;
     //  useEffect( () => {} , [] )
     useEffect( () => {
         fetch(`http://localhost:3000/mylistings?email=${user?.email}`)
         .then(res => res.json())
-        .then(data => setMyListings_Data(data))
+        .then(data => {
+            setMyListings_Data(data) ;
+            setLoader(false) ;
+        })
         .catch(errors => console.log("Error Occured in Data Fetching :", errors)) 
     } , [user?.email] )
     console.log("Fetched specific email's Data using backend: ", myListings_Data) ;
@@ -36,15 +41,22 @@ const MyListings = () => {
         axios.delete(`http://localhost:3000/delete/${id}`)
         .then(resD => {
             console.log("resD" , resD) ;
+            toast.success("Item is Deleted") ;
             const afterDeleteArr = myListings_Data.filter(t => t?._id !==  id) ;
             console.log("afterDeleteArr" , afterDeleteArr) ;
             setMyListings_Data(afterDeleteArr) ;
         })
     }
 
-
+    if(loader){
+        return <div className="flex justify-center items-center h-screen">
+                <span className="loading loading-bars loading-xl"></span>
+            </div>
+        }
     return (
         <div>
+            <title>My Listings</title>
+
             <div className="bg-[#f1f6fa] p-10">
                 <h1 className="text-3xl font-bold mb-5 text-center">My Listings</h1>
 

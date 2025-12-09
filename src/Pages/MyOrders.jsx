@@ -2,16 +2,21 @@ import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from './Authentication/Auth/AuthContext';
 import jsPDF from 'jspdf';
 import autoTable from "jspdf-autotable";
+import { faL } from '@fortawesome/free-solid-svg-icons';
 
 const MyOrders = () => {
 
     const {user} = useContext(AuthContext) ;
 
     const [myOrdersData , setMyOrdersData] = useState([]) ;
+    const [loader , setLoader] = useState(true) ;
     useEffect(()=>{
         fetch(`http://localhost:3000/myorders?email=${user?.email}`)
         .then(res => res.json())
-        .then(data => setMyOrdersData(data)) 
+        .then(data => {
+            setMyOrdersData(data) ;
+            setLoader(false) ;
+        }) 
     } , [user?.email])
     console.log("Fetched specific email's Data using backend For MyOrders Page: ", myOrdersData) ;
 
@@ -61,9 +66,14 @@ const MyOrders = () => {
 };
 
 
-
+    if(loader){
+        return <div className="flex justify-center items-center h-screen">
+                <span className="loading loading-bars loading-xl"></span>
+            </div>
+        }
     return (
         <div className='bg-[#f1f6fa] p-10'>
+            <title>My Orders</title>
             
             {
                 myOrdersData.length !== 0 ? <div> <h3 className="text-3xl font-bold mb-5 text-center">My Orders</h3> <button onClick={generatePDF} className="ml-270 btn bg-green-600 text-white hover:bg-green-800 mb-4">Download PDF Report</button>

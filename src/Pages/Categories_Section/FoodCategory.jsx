@@ -3,19 +3,27 @@ import React, { useEffect, useState } from 'react';
 const FoodCategory = () => {
 
     const [foodData , setFoodData] = useState([]) ;
+    const [loader , setLoader] = useState(true) ;
         useEffect(()=>{
             fetch(`http://localhost:3000/fulldata?category=Food`)
             .then(res => res.json())
-            .then(data => setFoodData(data)) 
+            .then(data => {
+                setFoodData(data) ;
+                setLoader(false) ;
+            }) 
         } , [])
         console.log('Only fooddata :' , foodData) ;
 
-
+    if(loader){
+         return <div className="flex justify-center items-center h-screen">
+                    <span className="loading loading-bars loading-xl"></span>
+                </div>
+            }
     return (
-        <div className='p-10 bg-[#f1f6fa] text-black'>
+        <div className='p-10 bg-[#f1f6fa] text-black pb-30'>
             <title>Pets Food</title>
             
-            <h3 className='text-center font-bold text-5xl mb-15 mt-5 text-black'>All your Pets Food</h3>
+            <h3 className='text-center font-bold text-5xl mb-15 mt-5 text-black'>Your Pets Food</h3>
 
 
             <div className='grid grid-cols-3 gap-10'>

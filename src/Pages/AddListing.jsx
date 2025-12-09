@@ -1,7 +1,8 @@
 import React, {useContext, useState } from 'react';
 import { AuthContext } from './Authentication/Auth/AuthContext';
 import axios from 'axios';
-import { toast } from 'react-toastify';
+import { toast, ToastContainer } from 'react-toastify';
+import { useNavigate } from 'react-router';
 
 const AddListing = () => {
 
@@ -15,7 +16,7 @@ const AddListing = () => {
     }
 
 
-
+    const navigate = useNavigate() ;
     // handleAddListingSave
     const handleAddListingSave = (e) => {
         e.preventDefault() ;
@@ -38,8 +39,11 @@ const AddListing = () => {
         console.log("email :" , email) ;
 
 
-        toast.success('Pet/Product List is added!')
         e.target.reset() ;
+        toast.success('Pet/Product List is added!') ;
+        setTimeout(()=>{
+            navigate('/mylistings')
+        }, 1600)
 
 
         // Send Add Listing to backend
@@ -121,7 +125,7 @@ const AddListing = () => {
                         </div>
                     </div>
                 </div>
-            
+            <ToastContainer></ToastContainer>
         </div>
     );
 };

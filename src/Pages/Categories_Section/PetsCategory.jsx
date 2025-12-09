@@ -1,20 +1,31 @@
 import React, {useEffect, useState } from 'react';
+import { AuthContext } from '../Authentication/Auth/AuthContext';
 
 const PetsCategory = () => {
 
 
     const [petData , setPetData] = useState([]) ;
+    const [loader , setLoader] = useState(true) ;
     useEffect(()=>{
         fetch(`http://localhost:3000/fulldata?category=Pets`)
         .then(res => res.json())
-        .then(data => setPetData(data)) 
+        .then(data => {
+            setPetData(data) ;
+            setLoader(false) ;
+        }) 
     } , [])
     console.log('Only Petdata :' , petData) ;
 
+    
 
+    if(loader){
+         return <div className="flex justify-center items-center h-screen">
+                    <span className="loading loading-bars loading-xl"></span>
+                </div>
+    }
 
     return (
-        <div className='p-10 bg-[#f1f6fa] text-black'>
+        <div className='p-10 bg-[#f1f6fa] text-black pb-30'>
             <title>Pets (Adoption)</title>
             
             <h3 className='text-center font-bold text-5xl mb-15 mt-5 text-black'>All your Pets for Adoption</h3>

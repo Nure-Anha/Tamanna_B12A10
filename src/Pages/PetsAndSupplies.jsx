@@ -9,11 +9,15 @@ const PetsAndSupplies = () => {
     
     // Data fetch from Backend 
      const [f_data , setF_data] = useState([]) ;
+     const [loader , setLoader] = useState(true) ;
     //  useEffect( () => {} , [] )
     useEffect( () => {
         fetch(`http://localhost:3000/fulldata?category=${categoryFilter}`)
         .then(res => res.json())
-        .then(data => setF_data(data))
+        .then(data => {
+            setF_data(data) ;
+            setLoader(false) ;
+        })
         .catch(errors => console.log("Error Occured in Data Fetching :", errors)) 
     } , [categoryFilter] )
     console.log("Fetched Data : ", f_data) ;
@@ -38,9 +42,14 @@ const PetsAndSupplies = () => {
 
         }
 
-
+    if(loader){
+         return <div className="flex justify-center items-center h-screen">
+                    <span className="loading loading-bars loading-xl"></span>
+                </div>
+            }
     return (
-        <div className='bg-[#f1f6fa] p-10'>
+        <div className='bg-[#f1f6fa] p-10 pb-30'>
+           <title>Pets & Supplies</title>
 
             <h3 className='text-center font-bold text-5xl mb-15 mt-5 text-black'>All your Pets & Supplies!</h3>
 
