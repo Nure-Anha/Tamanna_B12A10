@@ -4,6 +4,7 @@ import { AuthContext } from './Auth/AuthContext';
 import { auth } from './Auth/Firebase.config';
 import { updateProfile } from 'firebase/auth';
 import { FcGoogle } from "react-icons/fc";
+import { toast } from 'react-toastify';
 
 const Register = () => {
 
@@ -33,6 +34,7 @@ const Register = () => {
                 }).then(() => {
                 // Profile updated!
                    console.log("displayName & photoURL Updated :", auth.currentUser) ;
+                   toast.success("Register Successfully") ;
                 })
                 .catch(() => {
                 // An error occurred
@@ -54,7 +56,8 @@ const Register = () => {
         signInWithGoogle ()
         .then((resG) => {
         // This gives you a Google Access Token. You can use it to access the Google API.
-        console.log("New User Sign-Up by Google: ", resG.user)
+        console.log("New User Sign-Up by Google: ", resG.user) ;
+        toast.success("Register Successfully") ;
         // ...
         }).catch((errG) => {
         // Handle Errors here.

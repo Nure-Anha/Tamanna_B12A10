@@ -23,6 +23,7 @@ import ListingDetails from './Pages/ListingDetails.jsx';
 import MyListings from './Pages/MyListings.jsx';
 import UpdateLisitngs from './Pages/UpdateLisitngs.jsx';
 import MyOrders from './Pages/MyOrders.jsx';
+import PrivateRoute from './Pages/PrivateRoute.jsx';
 
 
 const router = createBrowserRouter([
@@ -37,15 +38,15 @@ const router = createBrowserRouter([
       {path:'foodcategory' , Component:FoodCategory} ,
       {path:'accessoriescategory' , Component:AccessoriesCategory} ,
       {path:'careprodcategory' , Component:CareProdCategory} ,
-      {path:'addlisting' , Component:AddListing} ,
+      {path:'addlisting' , element: <PrivateRoute> <AddListing></AddListing> </PrivateRoute>} ,
       {path:'login' , Component:Login} ,
       {path:'register' , Component:Register} ,
       {path:'petsAndsupplies' , Component:PetsAndSupplies} ,
       {path:'fulldata' , Component:FullData} ,
       {path:'listingdetails/:id' , Component:ListingDetails} ,
-      {path:'mylistings' , Component:MyListings} ,
+      {path:'mylistings' , element: <PrivateRoute> <MyListings></MyListings> </PrivateRoute>} ,
       {path:'updatelistings/:id' , Component:UpdateLisitngs} ,  
-      {path:'myorders' , Component:MyOrders} ,  
+      {path:'myorders' , element: <PrivateRoute> <MyOrders></MyOrders> </PrivateRoute>} ,  
       
     ]
   },

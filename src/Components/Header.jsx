@@ -28,9 +28,11 @@ const Header = () => {
     const links = <>
     <li className='font-bold '><NavLink to={"/"}>Home</NavLink></li>
     <li className='font-bold'><NavLink to={"/petsAndsupplies"}>Pets & Supplies</NavLink></li>
-    <li className='font-bold'><NavLink to={"/addlisting"}>Add Listing</NavLink></li>
-    <li className='font-bold'><NavLink to={"/mylistings"}>My Listings</NavLink></li>
-    <li className='font-bold'><NavLink to={"/myorders"}>My Orders</NavLink></li>
+        {
+            user && <>  <li className='font-bold'><NavLink to={"/addlisting"}>Add Listing</NavLink></li>
+                        <li className='font-bold'><NavLink to={"/mylistings"}>My Listings</NavLink></li>
+                        <li className='font-bold'><NavLink to={"/myorders"}>My Orders</NavLink></li>    </>
+        }
     </>
     return (
         <div className="navbar bg-base-100 shadow-sm">

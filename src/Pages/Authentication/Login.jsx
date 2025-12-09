@@ -1,12 +1,18 @@
 import React, { useContext } from 'react';
-import { Link } from 'react-router';
+import { Link, useLocation, useNavigate } from 'react-router';
 import { AuthContext } from './Auth/AuthContext';
 import { FcGoogle } from 'react-icons/fc';
+import { toast } from 'react-toastify';
 
 const Login = () => {
 
     // From <AuthContext.Provider value={authData}> {children} </AuthContext.Provider>
         const {signinwithEmailPass , signInWithGoogle} = useContext(AuthContext) ;
+
+
+    // Reload dile again Login e niye jay -- solutn
+    const location = useLocation() ;
+    const LoadingPageNavigate = useNavigate() ;
 
 
     // handleLogin
@@ -23,6 +29,8 @@ const Login = () => {
         signinwithEmailPass(email , pass)
         .then(signinE => {
             console.log("User Logged-In using Email-Password: ", signinE.user) ;
+            toast.success("Login Successfully") ;
+            LoadingPageNavigate(location.state ? location.state : '/') ;
         })
         .catch(errsigninE => {
             console.log("Error Code :", errsigninE.code) ;
@@ -37,7 +45,9 @@ const Login = () => {
         signInWithGoogle()
         .then((resG) => {
         // This gives you a Google Access Token. You can use it to access the Google API.
-        console.log("New User Registered by Google: ", resG.user)
+        console.log("New User Registered by Google: ", resG.user) ;
+        toast.success("Login Successfully") ;
+        LoadingPageNavigate(location.state ? location.state : '/') ;
         // ...
         }).catch((errG) => {
         // Handle Errors here.

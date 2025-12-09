@@ -5,6 +5,9 @@ import { createUserWithEmailAndPassword, GoogleAuthProvider, onAuthStateChanged,
 
 const AuthProvider = ({children}) => {  {/**Main.jsx er all {router} ekhne children hishebe ashe */}
 
+    // Loading add
+    const [Loading , setLoading] = useState(true) ;
+
     // createUserWithEmailAndPassword
     const regWithEmailPass = (email , password) => {
         return createUserWithEmailAndPassword(auth, email, password) ;
@@ -50,6 +53,7 @@ const AuthProvider = ({children}) => {  {/**Main.jsx er all {router} ekhne child
      useEffect( () => {
         const unSubscibe = onAuthStateChanged(auth , (curr_user) => {
             setUser(curr_user) ;
+            setLoading(false) ;
         })
         return unSubscibe ;
      } , [])
@@ -57,7 +61,7 @@ const AuthProvider = ({children}) => {  {/**Main.jsx er all {router} ekhne child
     
 
     // **********************************************
-    const authData = {regWithEmailPass , signinwithEmailPass , signInWithGoogle , signOutGoogle , user , } ;
+    const authData = {regWithEmailPass , signinwithEmailPass , signInWithGoogle , signOutGoogle , user , Loading } ;
     return <AuthContext.Provider value={authData}>
         {children}          {/*Everything(every route in main.jsx) inside {children} can access authData using obj destructuring. Thats why used UseContext to avoid prop drilling*/}
     </AuthContext.Provider>
