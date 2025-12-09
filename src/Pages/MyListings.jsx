@@ -71,15 +71,15 @@ const MyListings = () => {
                                 {
                                     myListings_Data.map((j,index) => <tr key={j?._id}>
                                     <th>{index+1}</th>
-                                    <td><img className='w-25' src={j?.imageURL} alt="" /></td>
-                                    <td>{j.name} </td>
-                                    <td>{j.category} </td>
-                                    <td>{j.price} </td>
-                                    <td>{j.location} </td>
+                                    <td className='font-medium'><img className='w-25' src={j?.imageURL} alt="" /></td>
+                                    <td className='font-medium'>{j.name} </td>
+                                    <td className='font-medium'>{j.category} </td>
+                                    <td className='font-medium'>{j.price} </td>
+                                    <td className='font-medium'>{j.location} </td>
                                     {/* <td>{j.description} </td> */}
-                                    <td>{j.pickupdate} </td>
-                                    <td>{j.email} </td>
-                                    <td>
+                                    <td className='font-medium'>{j.pickupdate} </td>
+                                    <td className='font-medium'>{j.email} </td>
+                                    <td className='font-medium'>
                                         <button onClick={()=>handleUpdateBtn(j?._id)} className='btn bg-blue-500  text-white hover:bg-blue-800'>Update</button>
                                         <button onClick={()=>handleDel(j?._id)} className='btn ml-2.5 bg-red-500 hover:bg-red-700 text-white'>Delete</button>
                                     </td>

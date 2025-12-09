@@ -38,6 +38,8 @@ const ListingDetails = () => {
         console.log(buyername) ;
         const email = user?.email ;
         console.log(email) ;
+        const price = specificID_Data?.price ;
+        console.log(price) ;
         const product_listing_id = specificID_Data?._id ;
         console.log(product_listing_id) ;
         const product_listing_name = specificID_Data?.name ;
@@ -60,6 +62,7 @@ const ListingDetails = () => {
         // send to backend
         const orderData = {
             Buyer_Name : buyername ,
+            Price : price ,
             Email : email ,
             Product_Listing_Id : product_listing_id ,
             Product_Listing_Name : product_listing_name ,
@@ -70,7 +73,7 @@ const ListingDetails = () => {
             Addiotional_Notes : addiotional_notes 
         }
         console.log("orderData passing to Backend from front :", orderData) ;
-        axios.post("http://localhost:3000/listingdetails" , orderData) 
+        axios.post("http://localhost:3000/myorders" , orderData) 
         .then(resOrderData => {
             console.log("resOrderData :" , resOrderData) ;
         })
@@ -127,7 +130,7 @@ const ListingDetails = () => {
 
 
                         <label className="label">Price</label>
-                        <input type="number" name='price' className="input" placeholder={specificID_Data?.price} readOnly />
+                        <input type="number" name='price' className="input" placeholder={specificID_Data?.category === 'Pets' ? '0 (Fixed for Pets Category)' : `${specificID_Data?.price}`} readOnly />
 
 
                         <label className="label">Address</label>

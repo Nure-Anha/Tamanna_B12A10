@@ -22,6 +22,7 @@ import FullData from './Pages/FullData.jsx';
 import ListingDetails from './Pages/ListingDetails.jsx';
 import MyListings from './Pages/MyListings.jsx';
 import UpdateLisitngs from './Pages/UpdateLisitngs.jsx';
+import MyOrders from './Pages/MyOrders.jsx';
 
 
 const router = createBrowserRouter([
@@ -44,6 +45,7 @@ const router = createBrowserRouter([
       {path:'listingdetails/:id' , Component:ListingDetails} ,
       {path:'mylistings' , Component:MyListings} ,
       {path:'updatelistings/:id' , Component:UpdateLisitngs} ,  
+      {path:'myorders' , Component:MyOrders} ,  
       
     ]
   },
