@@ -45,7 +45,7 @@ const MyListings = () => {
 
     return (
         <div>
-            <div className="p-10">
+            <div className="bg-[#f1f6fa] p-10">
                 <h1 className="text-3xl font-bold mb-5 text-center">My Listings</h1>
 
               <div className="overflow-x-auto">

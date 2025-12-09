@@ -55,8 +55,10 @@ const ListingDetails = () => {
         const addiotional_notes = e.target.addiotional_notes.value ;
         console.log(addiotional_notes) ;
 
-        toast.success('Your Order is Placed Successfully, Thank You !')
+
         e.target.reset() ;
+        document.getElementById('my_modal_5').close();
+        toast.success('Your Order is Placed Successfully, Thank You !') ;
 
 
         // send to backend
@@ -157,11 +159,11 @@ const ListingDetails = () => {
                     <button className="btn flex justify-center items-center">Close</button>
                 </form>
                 </div>
-                <ToastContainer></ToastContainer>
             </div>
             </dialog>
 
         </div>
+        <ToastContainer></ToastContainer>
         </div>
     );
 };
