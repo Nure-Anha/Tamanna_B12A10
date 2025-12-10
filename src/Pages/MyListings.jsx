@@ -2,7 +2,8 @@ import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from './Authentication/Auth/AuthContext';
 import { useNavigate } from 'react-router';
 import axios from 'axios';
-import { toast } from 'react-toastify';
+import { toast, ToastContainer } from 'react-toastify';
+import Swal from 'sweetalert2';
 
 const MyListings = () => {
 
@@ -33,19 +34,40 @@ const MyListings = () => {
 
     // handleDelete
     const handleDel = (id) => {
-        const confirmDel = window.confirm("Are You Sure to Delete this Item?");
-        if (!confirmDel) {
-            return;
-        }
-            
-        axios.delete(`http://localhost:3000/delete/${id}`)
-        .then(resD => {
-            console.log("resD" , resD) ;
-            toast.success("Item is Deleted") ;
-            const afterDeleteArr = myListings_Data.filter(t => t?._id !==  id) ;
-            console.log("afterDeleteArr" , afterDeleteArr) ;
-            setMyListings_Data(afterDeleteArr) ;
+        // const confirmDel = window.confirm("Are You Sure to Delete this Item?");
+        // if (!confirmDel) {
+        //     return;
+        // }
+        Swal.fire({
+            title: "Are you sure?",
+            text: "This item will be permanently deleted!",
+            icon: "warning" ,
+            showCancelButton: true,
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, delete it!"
+            }).then(resDSweet => {
+            if (resDSweet.isConfirmed) {
+                axios.delete(`http://localhost:3000/delete/${id}`)
+                .then(resD => {
+                console.log("resD" , resD) ;
+                toast.success("Item is Deleted") ;
+                const afterDeleteArr = myListings_Data.filter(t => t?._id !==  id) ;
+                console.log("afterDeleteArr" , afterDeleteArr) ;
+                setMyListings_Data(afterDeleteArr) ;
+                })
+            }
         })
+
+        
+            
+        // axios.delete(`http://localhost:3000/delete/${id}`)
+        // .then(resD => {
+        //     console.log("resD" , resD) ;
+        //     toast.success("Item is Deleted") ;
+        //     const afterDeleteArr = myListings_Data.filter(t => t?._id !==  id) ;
+        //     console.log("afterDeleteArr" , afterDeleteArr) ;
+        //     setMyListings_Data(afterDeleteArr) ;
+        // })
     }
 
     if(loader){
@@ -58,9 +80,9 @@ const MyListings = () => {
             <title>My Listings</title>
 
             <div className="bg-[#f1f6fa] p-10">
-                <h1 className="text-3xl font-bold mb-5 text-center">My Listings</h1>
 
-              <div className="overflow-x-auto">
+              {
+                myListings_Data.length !== 0 ? <div> <h1 className="text-3xl font-bold mb-5 text-center">My Listings</h1> <div className="overflow-x-auto">
                         <table className="table">
                             {/* head */}
                             <thead>
@@ -99,9 +121,11 @@ const MyListings = () => {
                                 }
                             </tbody>
                         </table>
-                </div>
+                </div> </div> : <h3 className='font-bold text-5xl text-center text-red-500'>No List is Added Yet</h3>
+              }
 
             </div>
+            <ToastContainer></ToastContainer>
         </div>
     );
 };

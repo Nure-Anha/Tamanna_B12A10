@@ -2,7 +2,6 @@ import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from './Authentication/Auth/AuthContext';
 import jsPDF from 'jspdf';
 import autoTable from "jspdf-autotable";
-import { faL } from '@fortawesome/free-solid-svg-icons';
 
 const MyOrders = () => {
 

@@ -41,6 +41,18 @@ const PetsAndSupplies = () => {
             navigate(`/listingdetails/${id}`) ;
 
         }
+    
+    
+    const [search , setSearch] = useState('') ;
+    // handleSearch
+    const handleSearch = (e) => {
+        e.preventDefault() ;
+        setSearch(e.target.value) ;
+    }
+    const searchedData = f_data.filter(p => p.name.toLowerCase().includes(search.toLowerCase())) ;
+    console.log(searchedData) ;
+
+
 
     if(loader){
          return <div className="flex justify-center items-center h-screen">
@@ -53,8 +65,25 @@ const PetsAndSupplies = () => {
 
             <h3 className='text-center font-bold text-5xl mb-15 mt-5 text-black'>All your Pets & Supplies!</h3>
 
-            {/* filter by categry  */}
-            <div className="flex justify-end mb-5">
+            {/*search and  filter by categry  */}
+            <div className="flex space-x-150 mb-5">
+                <label className="input">
+                    <svg className="h-[1em] opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <g
+                        strokeLinejoin="round"
+                        strokeLinecap="round"
+                        strokeWidth="2.5"
+                        fill="none"
+                        stroke="currentColor"
+                        >
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="m21 21-4.3-4.3"></path>
+                        </g>
+                    </svg>
+                    <input onChange={handleSearch} value={search} type="search" required placeholder="Search by Name" />
+                </label>
+
+
                 <select onChange={handleFilterByCtgry} value={categoryFilter} className="select select-bordered w-1/3">
                     <option value="">All Categories</option>
                     <option value="Pets">Pets</option>
@@ -68,7 +97,7 @@ const PetsAndSupplies = () => {
 
             <div className='grid grid-cols-3 gap-10'>
                 {
-                f_data.map(i => <div key={i?._id} className="card bg-base-100 shadow-2xl p-5">
+                searchedData.map(i => <div key={i?._id} className="card bg-base-100 shadow-2xl p-5">
                     <figure>
                         <img className=' object-cover w-full h-60 rounded-2xl' src={i?.imageURL}  alt="Shoes" />
                     </figure>

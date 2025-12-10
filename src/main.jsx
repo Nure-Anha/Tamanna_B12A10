@@ -43,7 +43,7 @@ const router = createBrowserRouter([
       {path:'register' , Component:Register} ,
       {path:'petsAndsupplies' , Component:PetsAndSupplies} ,
       {path:'fulldata' , Component:FullData} ,
-      {path:'listingdetails/:id' , Component:ListingDetails} ,
+      {path:'listingdetails/:id' , element: <PrivateRoute> <ListingDetails></ListingDetails> </PrivateRoute>} ,
       {path:'mylistings' , element: <PrivateRoute> <MyListings></MyListings> </PrivateRoute>} ,
       {path:'updatelistings/:id' , Component:UpdateLisitngs} ,  
       {path:'myorders' , element: <PrivateRoute> <MyOrders></MyOrders> </PrivateRoute>} ,  

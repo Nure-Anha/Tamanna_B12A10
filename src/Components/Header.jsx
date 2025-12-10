@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { Link, NavLink, useNavigate } from 'react-router';
 import { AuthContext } from '../Pages/Authentication/Auth/AuthContext';
+import Theme from '../Pages/Theme';
 
 const Header = () => {
 
@@ -51,7 +52,8 @@ const Header = () => {
                 </div>
                     <div onClick={handleLogoName} className='flex cursor-pointer'>
                         <img className='mt-3 w-12 h-10 rounded-full' src="/my_assets/petLogo.jpg" alt="" />
-                        <a  className="text-3xl lg:text-5xl font-bold bg-linear-to-r from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90% bg-clip-text text-transparent mt-2">PawsNest</a>
+                        <a  className="text-3xl lg:text-5xl font-bold bg-linear-to-r from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90% bg-clip-text text-transparent mt-2">PawsNest</a> 
+                        {/* <Theme></Theme> */}
                     </div>
           </div>
 
