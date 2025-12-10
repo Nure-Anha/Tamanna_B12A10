@@ -1,7 +1,6 @@
 import React, { useContext, useState } from 'react';
 import { Link, NavLink, useNavigate } from 'react-router';
 import { AuthContext } from '../Pages/Authentication/Auth/AuthContext';
-import Theme from '../Pages/Theme';
 
 const Header = () => {
 
