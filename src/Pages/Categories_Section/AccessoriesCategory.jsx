@@ -26,7 +26,7 @@ const AccessoriesCategory = () => {
             <h3 className='text-center font-bold text-5xl mb-15 mt-5 text-black'>All Your Pets Accessories</h3>
 
 
-            <div className='grid grid-cols-3 gap-10'>
+            <div className='grid  grid-cols-1  lg:grid-cols-3 gap-10'>
                 {
                 accessoriesData.map(i => <div key={i?._id} className="card bg-base-100 shadow-2xl p-5">
                     <figure>

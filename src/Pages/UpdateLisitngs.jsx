@@ -91,10 +91,10 @@ const UpdateLisitngs = () => {
 
 
     return (
-        <div className='p-20 bg-[#f1f6fa]'>
-            <div className="hero bg-base-200 min-h-screen shadow-2xl">
+        <div className='lg:p-20 bg-[#f1f6fa]'>
+            <div className="hero bg-base-200 min-h-screen shadow-2xl w-full">
                 <div className="hero-content flex-col">
-                    <div className="text-center lg:text-left">
+                    <div className=" text-center lg:text-left">
                         <h1 className="text-5xl font-bold">Update List</h1>
                     </div>
                     <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">

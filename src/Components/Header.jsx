@@ -19,8 +19,9 @@ const Header = () => {
         signOutGoogle()
         .then(() => {
         // Sign-out successful.
-        }).catch(() => {
+        }).catch((err) => {
         // An error happened.
+            console.log('error logout :', err.message)
         });
     }
 
@@ -67,7 +68,7 @@ const Header = () => {
                     </div>
                     <ul
                         tabIndex="-1"
-                        className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
+                        className="menu menu-sm dropdown-content bg-base-100 rounded-box z-100 mt-6 w-52 p-2 shadow">
                         {
                             links
                         }
@@ -89,7 +90,7 @@ const Header = () => {
                 <div className="navbar-end">
 
                     {/* Theme */}
-                    <label className="mr-20 flex cursor-pointer gap-2">
+                    <label className="mt-20 lg:mt-0 lg:mr-20 flex cursor-pointer gap-2">
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
                             width="20"
@@ -125,7 +126,7 @@ const Header = () => {
                     {
                         user ? <div className='flex space-x-2.5 tooltip tooltip-left' data-tip={user.displayName} >
                         <img className='w-10 h-10 rounded-full' src={user.photoURL} alt="" />
-                        <button onChange={handleLogOut} className="mr-2.5 btn border-blue-500 hover:bg-blue-500 hover:text-white">Logout</button>
+                        <button onClick={handleLogOut} className="mr-10 lg:mr-2.5  btn border-blue-500 hover:bg-blue-500 hover:text-white">Logout</button>
                         </div> :  <div>
                         <Link className="mr-2.5 btn border-blue-500 hover:bg-blue-500 hover:text-white" to={'/login'}>Login</Link>
                         <Link className="btn border-violet-500 hover:bg-violet-500 hover:text-white" to={'/register'}>Register</Link>

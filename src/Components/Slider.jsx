@@ -3,6 +3,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
+import { motion } from "motion/react"
 // import React, { useRef, useState } from 'react';
 
 
@@ -23,11 +24,13 @@ const Slider = () => {
         className="mySwiper"
       >
         <SwiperSlide>
+          <motion.div initial={{ scale: 1.5 }} animate={{ scale: 1 , transition: { duration: 1 } }}>
           <img className='brightness-50' src="/my_assets/img4.jpg" alt="" />
 
           <div className='absolute inset-0 text-white flex flex-col justify-center items-center'>
             <p className='text-6xl font-bold text-center'>Find Your <br /> Perfect Paw-Partner <br /> Today</p>
           </div>
+          </motion.div>
         </SwiperSlide>
 
         <SwiperSlide>

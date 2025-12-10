@@ -66,7 +66,7 @@ const PetsAndSupplies = () => {
             <h3 className='text-center font-bold text-5xl mb-15 mt-5 text-black'>All your Pets & Supplies!</h3>
 
             {/*search and  filter by categry  */}
-            <div className="flex space-x-150 mb-5">
+            <div className="flex space-x-10 lg:space-x-150 mb-5">
                 <label className="input">
                     <svg className="h-[1em] opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                         <g
@@ -80,11 +80,11 @@ const PetsAndSupplies = () => {
                         <path d="m21 21-4.3-4.3"></path>
                         </g>
                     </svg>
-                    <input onChange={handleSearch} value={search} type="search" required placeholder="Search by Name" />
+                    <input onChange={handleSearch} value={search} type="search" required placeholder="Search" />
                 </label>
 
 
-                <select onChange={handleFilterByCtgry} value={categoryFilter} className="select select-bordered w-1/3">
+                <select onChange={handleFilterByCtgry} value={categoryFilter} className="select select-bordered lg:w-1/3">
                     <option value="">All Categories</option>
                     <option value="Pets">Pets</option>
                     <option value="Food">Pet Food</option>
@@ -95,7 +95,7 @@ const PetsAndSupplies = () => {
 
 
 
-            <div className='grid grid-cols-3 gap-10'>
+            <div className='grid grid-cols-1 lg:grid-cols-3 gap-10'>
                 {
                 searchedData.map(i => <div key={i?._id} className="card bg-base-100 shadow-2xl p-5">
                     <figure>

@@ -25,9 +25,9 @@ const RecentListings = () => {
            <h3 className='text-center font-bold text-5xl mb-15  text-black'>Recently Listed Items</h3>
 
 
-            <div className='grid grid-cols-3 gap-20'>
+            <div className='grid grid-cols-1  lg:grid-cols-3 gap-20'>
                 {
-                recent.map(i => <div key={i?._id} className="card bg-base-100 shadow-2xl p-5">
+                recent.map(i => <motion.div initial={{ scale: 1.5 }} animate={{ scale: 1 , transition: { duration: 1 } }}> <div key={i?._id} className="card bg-base-100 shadow-2xl p-5">
                     <figure>
                         <img className=' object-cover w-full h-60 rounded-2xl' src={i?.imageURL}  alt="Shoes" />
                     </figure>
@@ -43,7 +43,7 @@ const RecentListings = () => {
                     <div className="card-actions justify-center mt-5">
                         <button onClick={() => handleSeeDetails(i?._id)} className="btn btn-primary p-5">See Details</button>
                         </div>
-                </div>)
+                </div> </motion.div>)
                 }
             </div>
         </div>
