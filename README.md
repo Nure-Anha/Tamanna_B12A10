@@ -1,16 +1,11 @@
-# React + Vite
+My Website Name: PawsNest
+Live Client-Side URL: https://tamanna-b12a10-frontend-pawsnest.netlify.app/
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Key Features of PawsNest:
+1. Browse pets by categories such as Dogs, Cats, Birds, and more.
+2. Filter pets by category, and can search by name
+3. Secure Authentication - Login/register system using EmailPassword+Google Firebase Auth.
+4. Light/Dark Theme Fully implement using DaisyUI + TailwindCSS.
+5. Each pet/product has a full details card with image, description, and adoption/buy info.
+6. Logged-in users can adopt their preferred pets and order products which stored in the My Orders page, also add pets for adoption or add products from the Add Listings Page, which are stored in the My Listings Page. They can view their added products/pets in My Listings Page in a tabular form,  and also, if  any updates are needed, they can update their added products/pets info by clicking the update button. And also can delete it.
+7. From My orders page, they can also download the order report as a PDF, which is shown in a tabular form on this page. 
