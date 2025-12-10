@@ -79,13 +79,13 @@ const MyListings = () => {
         <div>
             <title>My Listings</title>
 
-            <div className="bg-[#f1f6fa] p-10">
+            <div className="bg-[#f1f6fa] p-10 text-black">
 
               {
                 myListings_Data.length !== 0 ? <div> <h1 className="text-3xl font-bold mb-5 text-center">My Listings</h1> <div className="overflow-x-auto">
                         <table className="table">
                             {/* head */}
-                            <thead>
+                            <thead className='text-gray-500'>
                                 <tr>
                                     <th>#</th>
                                     <th>Image</th>

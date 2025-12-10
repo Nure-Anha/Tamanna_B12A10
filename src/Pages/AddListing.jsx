@@ -76,7 +76,7 @@ const AddListing = () => {
                 <div className="hero min-h-screen">
                     <div className="hero-content flex-col bg-white p-20 rounded-2xl shadow-2xl">
                         <div className="text-center  w-200">
-                            <h1 className="text-5xl font-bold">Add New Listing</h1>
+                            <h1 className="text-5xl font-bold text-black">Add New Listing</h1>
                         </div>
                         <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
                             <div className="card-body">
