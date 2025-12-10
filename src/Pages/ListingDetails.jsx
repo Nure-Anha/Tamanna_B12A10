@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import { useParams } from 'react-router';
 import { AuthContext } from './Authentication/Auth/AuthContext';
 import axios from 'axios';
-import { toast, ToastContainer } from 'react-toastify';
+import { ToastContainer } from 'react-toastify';
 import Swal from 'sweetalert2';
 
 const ListingDetails = () => {
