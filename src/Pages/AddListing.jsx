@@ -1,8 +1,9 @@
 import React, {useContext, useState } from 'react';
 import { AuthContext } from './Authentication/Auth/AuthContext';
 import axios from 'axios';
-import { toast, ToastContainer } from 'react-toastify';
+import {ToastContainer } from 'react-toastify';
 import { useNavigate } from 'react-router';
+import Swal from 'sweetalert2';
 
 const AddListing = () => {
 
@@ -40,10 +41,14 @@ const AddListing = () => {
 
 
         e.target.reset() ;
-        toast.success('Pet/Product List is added!') ;
-        setTimeout(()=>{
-            navigate('/mylistings')
-        }, 1600)
+        // toast.success('Pet/Product List is added!') ;
+        Swal.fire({
+            title: "Good job!",
+            text: "New Item is Added!",
+            icon: "success"
+        }).then(() => {
+             navigate('/mylistings');
+            });
 
 
         // Send Add Listing to backend

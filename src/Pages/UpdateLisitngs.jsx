@@ -1,8 +1,9 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from './Authentication/Auth/AuthContext';
-import { toast, ToastContainer } from 'react-toastify';
+import {ToastContainer } from 'react-toastify';
 import axios from 'axios';
 import { useNavigate, useParams } from 'react-router';
+import Swal from 'sweetalert2';
 
 const UpdateLisitngs = () => {
 
@@ -61,10 +62,13 @@ const UpdateLisitngs = () => {
     
     
             e.target.reset() ; 
-            toast.success('List Updated Successfully!') ;
-            setTimeout(()=>{
-                navigate("/mylistings")
-            } , 1600)
+            Swal.fire({
+            title: "Well Done!",
+            text: "List Updated Successfully!",
+            icon: "success"
+            }).then(() => {
+                navigate('/mylistings');
+            });
 
 
         // put updated changes to backend
@@ -106,7 +110,8 @@ const UpdateLisitngs = () => {
                                     <input type="text" name='name' className="input" defaultValue={myUpdate_Data_Info?.name} />
 
                                     <label className="label">Category</label>
-                                    <select onChange={handleCategoryOnchange} defaultValue={myUpdate_Data_Info?.category} name='category' className="select">
+                                    <select onChange={handleCategoryOnchange} value={categoryyy || myUpdate_Data_Info?.category || ""} name='category' className="select">
+                                        <option >Select a Category</option>
                                         <option>Pets</option>
                                         <option>Food</option>
                                         <option>Accessories</option>
@@ -114,7 +119,7 @@ const UpdateLisitngs = () => {
                                     </select>
 
                                     <label className="label">Price</label>
-                                    <input type="number" name='price' className="input" defaultValue={myUpdate_Data_Info.price}  readOnly={(categoryyy || myUpdate_Data_Info?.category) === 'Pets'} />
+                                    <input type="number" name='price' className="input" Value={(categoryyy || myUpdate_Data_Info?.category) === 'Pets' ? 0 : `${myUpdate_Data_Info.price}`}  readOnly={(categoryyy || myUpdate_Data_Info?.category) === 'Pets'} />
 
 
                                     <label className="label">Location</label>

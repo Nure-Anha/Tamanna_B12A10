@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router';
 import { AuthContext } from './Auth/AuthContext';
 import { FcGoogle } from 'react-icons/fc';
-import { toast } from 'react-toastify';
+import Swal from 'sweetalert2';
 
 const Login = () => {
 
@@ -29,14 +29,25 @@ const Login = () => {
         signinwithEmailPass(email , pass)
         .then(signinE => {
             console.log("User Logged-In using Email-Password: ", signinE.user) ;
-            toast.success("Login Successfully") ;
+            Swal.fire({
+            title: "Good!",
+            text: "Login Successfully!",
+            icon: "success"
+            });
             LoadingPageNavigate(location.state ? location.state : '/') ;
         })
         .catch(errsigninE => {
             console.log("Error Code :", errsigninE.code) ;
             console.log("Error Message :", errsigninE.message) ;
+            Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: "Something went wrong"
+            });
         })
     }
+
+
 
     // handleGoogleSignIn
     const handleGoogleSignIn = () => {
@@ -46,13 +57,22 @@ const Login = () => {
         .then((resG) => {
         // This gives you a Google Access Token. You can use it to access the Google API.
         console.log("New User Registered by Google: ", resG.user) ;
-        toast.success("Login Successfully") ;
+        Swal.fire({
+        title: "Good!",
+        text: "Login Successfully!",
+        icon: "success"
+        });
         LoadingPageNavigate(location.state ? location.state : '/') ;
         // ...
         }).catch((errG) => {
         // Handle Errors here.
         console.log(errG.code);
         console.log(errG.message);
+        Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "Something went wrong"
+        });
         });
     }
 

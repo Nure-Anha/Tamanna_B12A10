@@ -3,6 +3,7 @@ import { useParams } from 'react-router';
 import { AuthContext } from './Authentication/Auth/AuthContext';
 import axios from 'axios';
 import { toast, ToastContainer } from 'react-toastify';
+import Swal from 'sweetalert2';
 
 const ListingDetails = () => {
 
@@ -58,7 +59,11 @@ const ListingDetails = () => {
 
         e.target.reset() ;
         document.getElementById('my_modal_5').close();
-        toast.success('Your Order is Placed Successfully, Thank You !') ;
+        Swal.fire({
+        title: "Good!",
+        text: "Your Order is Placed Successfully, Thank You!",
+        icon: "success"
+        });
 
 
         // send to backend
@@ -85,6 +90,7 @@ const ListingDetails = () => {
    
     return (
         <div className='bg-[#f1f6fa] p-10'>
+            <title>Listing Details</title>
             <div className='flex flex-col space-y-10 xl:space-x-5 xl:space-y-0 lg:flex-row pt-15 pl-10 pr-12 '>
             <div>
                 <img className='w-150 rounded-2xl shadow-2xl' src={specificID_Data?.imageURL} alt="" />
@@ -111,7 +117,7 @@ const ListingDetails = () => {
                 <h3 className="font-bold text-lg text-center">Place Your Order</h3>
                 
                 <form onSubmit={handlePlaceOrder}>
-                    <fieldset className="fieldset ml-18 mt-5">
+                    <fieldset className="fieldset lg:ml-18 mt-5">
 
                         <label className="label">Buyer Name </label>
                         <input type="text" name='buyername' className="input" placeholder={user?.displayName} readOnly />

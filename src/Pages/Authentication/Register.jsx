@@ -4,7 +4,7 @@ import { AuthContext } from './Auth/AuthContext';
 import { auth } from './Auth/Firebase.config';
 import { updateProfile } from 'firebase/auth';
 import { FcGoogle } from "react-icons/fc";
-import { toast } from 'react-toastify';
+import Swal from 'sweetalert2';
 
 const Register = () => {
 
@@ -25,6 +25,33 @@ const Register = () => {
         console.log("pass:", pass) ;
 
 
+        // REGEX
+        const upperCase = /[A-Z]/ ;
+        const loweCase = /[a-z]/ ;
+        if(!upperCase.test(pass)) {
+           return Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: "Must have an UpperCase letter in the password!"
+            });
+        }
+        if(!loweCase.test(pass)) {
+           return Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: "Must have an LowerCase letter in the password!"
+            });
+        }
+        if(pass.length < 6) {
+           return Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: "Password Length must be at least 6 character"
+            });
+        }
+
+
+        e.target.reset() ;
         // regWithEmailPass & updateProfile
         regWithEmailPass(email , pass)
         .then(resregE => {
@@ -34,16 +61,26 @@ const Register = () => {
                 }).then(() => {
                 // Profile updated!
                    console.log("displayName & photoURL Updated :", auth.currentUser) ;
-                   toast.success("Register Successfully") ;
+                   Swal.fire({
+                    title: "Good!",
+                    text: "Account is Registered Successfully!",
+                    icon: "success"
+                    });
                 })
-                .catch(() => {
+                .catch((errE) => {
                 // An error occurred
-                // ...
+                 console.log("Error occured in Reg with Email-Pass :", errE.message) ;
+
                 });
-        })
-        .catch(errregE => {
+            })
+            .catch(errregE => {
             console.log("Error Code :", errregE.code) ;
             console.log("Error Message :", errregE.message) ;
+            Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: "Something went wrong"
+            });
         })
     }
 
@@ -57,12 +94,21 @@ const Register = () => {
         .then((resG) => {
         // This gives you a Google Access Token. You can use it to access the Google API.
         console.log("New User Sign-Up by Google: ", resG.user) ;
-        toast.success("Register Successfully") ;
+        Swal.fire({
+                    title: "Good!",
+                    text: "Account is Registered Successfully!",
+                    icon: "success"
+                    });
         // ...
         }).catch((errG) => {
         // Handle Errors here.
         console.log(errG.code);
-        console.log(errG.message);
+        console.log("Error occured in Reg with Google" , errG.message);
+        Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: "Something went wrong"
+            });
         });
     }
 

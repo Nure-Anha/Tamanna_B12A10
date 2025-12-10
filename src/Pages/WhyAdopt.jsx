@@ -2,7 +2,7 @@ import React from 'react';
 
 const WhyAdopt = () => {
     return (
-        <div className='bg-[#FFF8F0] p-20 '>
+        <div className='bg-[#f1dfca] p-20  shadow-2xl'>
             <div className='flex flex-col lg:flex-row lg:space-x-20 items-start'>
             
                 <div className='mb-10 lg:mb-0'>
