@@ -6,7 +6,7 @@ const FullData = () => {
 
     // handleDataUpload
     const handleDataUpload = () => {
-        axios.post('http://localhost:3000/fulldata' , allData) 
+        axios.post('https://tamanna-b12a10-backend.vercel.app/fulldata' , allData) 
         .then(resFullD => {
             console.log(resFullD) ;
         })

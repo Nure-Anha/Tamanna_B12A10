@@ -10,7 +10,7 @@ const MyOrders = () => {
     const [myOrdersData , setMyOrdersData] = useState([]) ;
     const [loader , setLoader] = useState(true) ;
     useEffect(()=>{
-        fetch(`http://localhost:3000/myorders?email=${user?.email}`)
+        fetch(`https://tamanna-b12a10-backend.vercel.app/myorders?email=${user?.email}`)
         .then(res => res.json())
         .then(data => {
             setMyOrdersData(data) ;

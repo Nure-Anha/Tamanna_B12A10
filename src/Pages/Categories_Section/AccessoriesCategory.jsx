@@ -5,7 +5,7 @@ const AccessoriesCategory = () => {
     const [accessoriesData , setAccessoriesData] = useState([]) ;
     const [loader , setLoader] = useState(true) ;
                 useEffect(()=>{
-                    fetch(`http://localhost:3000/fulldata?category=Accessories`)
+                    fetch(`https://tamanna-b12a10-backend.vercel.app/fulldata?category=Accessories`)
                     .then(res => res.json())
                     .then(data => {
                         setAccessoriesData(data) ;

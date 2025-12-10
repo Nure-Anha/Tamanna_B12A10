@@ -5,7 +5,7 @@ const CareProdCategory = () => {
     const [careData , setCareData] = useState([]) ;
     const [loader , setLoader] = useState(true) ;
             useEffect(()=>{
-                fetch(`http://localhost:3000/fulldata?category=Care Products`)
+                fetch(`https://tamanna-b12a10-backend.vercel.app/fulldata?category=Care Products`)
                 .then(res => res.json())
                 .then(data => {
                     setCareData(data) ;

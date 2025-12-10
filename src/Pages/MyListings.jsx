@@ -15,7 +15,7 @@ const MyListings = () => {
     const [loader , setLoader] = useState(true) ;
     //  useEffect( () => {} , [] )
     useEffect( () => {
-        fetch(`http://localhost:3000/mylistings?email=${user?.email}`)
+        fetch(`https://tamanna-b12a10-backend.vercel.app/mylistings?email=${user?.email}`)
         .then(res => res.json())
         .then(data => {
             setMyListings_Data(data) ;
@@ -47,7 +47,7 @@ const MyListings = () => {
             confirmButtonText: "Yes, delete it!"
             }).then(resDSweet => {
             if (resDSweet.isConfirmed) {
-                axios.delete(`http://localhost:3000/delete/${id}`)
+                axios.delete(`https://tamanna-b12a10-backend.vercel.app/delete/${id}`)
                 .then(resD => {
                 console.log("resD" , resD) ;
                 toast.success("Item is Deleted") ;
@@ -60,7 +60,7 @@ const MyListings = () => {
 
         
             
-        // axios.delete(`http://localhost:3000/delete/${id}`)
+        // axios.delete(`https://tamanna-b12a10-backend.vercel.app/delete/${id}`)
         // .then(resD => {
         //     console.log("resD" , resD) ;
         //     toast.success("Item is Deleted") ;

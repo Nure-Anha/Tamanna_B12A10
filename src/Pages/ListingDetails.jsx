@@ -21,7 +21,7 @@ const ListingDetails = () => {
     const [specificID_Data , setSpecificID_Data] = useState([]) ;
     //  useEffect( () => {} , [] )
     useEffect( () => {
-        fetch(`http://localhost:3000/listingdetails/${idOfParams}`)
+        fetch(`https://tamanna-b12a10-backend.vercel.app/listingdetails/${idOfParams}`)
         .then(res => res.json())
         .then(data => setSpecificID_Data(data))
         .catch(errors => console.log("Error Occured in Data Fetching :", errors)) 
@@ -80,7 +80,7 @@ const ListingDetails = () => {
             Addiotional_Notes : addiotional_notes 
         }
         console.log("orderData passing to Backend from front :", orderData) ;
-        axios.post("http://localhost:3000/myorders" , orderData) 
+        axios.post("https://tamanna-b12a10-backend.vercel.app/myorders" , orderData) 
         .then(resOrderData => {
             console.log("resOrderData :" , resOrderData) ;
         })

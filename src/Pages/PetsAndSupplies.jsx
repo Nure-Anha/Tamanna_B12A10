@@ -12,7 +12,7 @@ const PetsAndSupplies = () => {
      const [loader , setLoader] = useState(true) ;
     //  useEffect( () => {} , [] )
     useEffect( () => {
-        fetch(`http://localhost:3000/fulldata?category=${categoryFilter}`)
+        fetch(`https://tamanna-b12a10-backend.vercel.app/fulldata?category=${categoryFilter}`)
         .then(res => res.json())
         .then(data => {
             setF_data(data) ;

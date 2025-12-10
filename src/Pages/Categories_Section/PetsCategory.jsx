@@ -7,7 +7,7 @@ const PetsCategory = () => {
     const [petData , setPetData] = useState([]) ;
     const [loader , setLoader] = useState(true) ;
     useEffect(()=>{
-        fetch(`http://localhost:3000/fulldata?category=Pets`)
+        fetch(`https://tamanna-b12a10-backend.vercel.app/fulldata?category=Pets`)
         .then(res => res.json())
         .then(data => {
             setPetData(data) ;

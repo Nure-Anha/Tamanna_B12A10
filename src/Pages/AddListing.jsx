@@ -65,7 +65,7 @@ const AddListing = () => {
         console.log("addListingFormgData Items :", addListingFormgData) ;
 
         // pass data to backend
-        axios.post('http://localhost:3000/addlisting' , addListingFormgData)  //sending data to backend
+        axios.post('https://tamanna-b12a10-backend.vercel.app/addlisting' , addListingFormgData)  //sending data to backend
         .then(resAddListing => {
             console.log("resAddListing :" , resAddListing) ;
         })

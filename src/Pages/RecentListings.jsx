@@ -6,7 +6,7 @@ const RecentListings = () => {
 
     const [recent , setRecent] = useState([]) ;
     useEffect(()=> {
-        fetch("http://localhost:3000/recent")
+        fetch("https://tamanna-b12a10-backend.vercel.app/recent")
         .then(res => res.json()) 
         .then(data => setRecent(data)) 
     } , [])

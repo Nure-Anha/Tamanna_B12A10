@@ -20,7 +20,7 @@ const UpdateLisitngs = () => {
     const [myUpdate_Data_Info , setMyUpdate_Data_Info] = useState([]) ;
         //  useEffect( () => {} , [] )
         useEffect( () => {
-            axios.get(`http://localhost:3000/listingdetails/${IDofParam}`)
+            axios.get(`https://tamanna-b12a10-backend.vercel.app/listingdetails/${IDofParam}`)
             .then(res => {
                 setMyUpdate_Data_Info(res.data) ;
             })
@@ -85,7 +85,7 @@ const UpdateLisitngs = () => {
         console.log("updateFormData Items :", updateFormData) ;
 
         // put updated data to backend
-        axios.put(`http://localhost:3000/updatelistings/${IDofParam}` , updateFormData)  //sending data to backend
+        axios.put(`https://tamanna-b12a10-backend.vercel.app/updatelistings/${IDofParam}` , updateFormData)  //sending data to backend
         .then(resUpdateFormData => {
             console.log("resUpdateFormData :" , resUpdateFormData) ;
         })
