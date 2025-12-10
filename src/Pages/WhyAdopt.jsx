@@ -20,17 +20,17 @@ const WhyAdopt = () => {
                         </div>
 
                         <div className='flex items-center space-x-3'>
-                            <img className='w-6 h-6' src="/public/my_assets/veterinary.png" alt="Icon" />
+                            <img className='w-6 h-6' src="/my_assets/veterinary.png" alt="Icon" />
                             <span className='text-gray-500 text-lg'>Reduce Overpopulation - Adoption helps control stray and abandoned pets.</span>
                         </div>
 
                         <div className='flex items-center space-x-3'>
-                            <img className='w-6 h-6' src="/public/my_assets/sprout.png" alt="Icon" />
+                            <img className='w-6 h-6' src="/my_assets/sprout.png" alt="Icon" />
                             <span className='text-gray-500 text-lg'>Affordable & Responsible - Often lower cost than buying and includes vet checks.</span>
                         </div>
 
                         <div className='flex items-center space-x-3'>
-                            <img className='w-6 h-6' src="/public/my_assets/home.png" alt="Icon" />
+                            <img className='w-6 h-6' src="/my_assets/home.png" alt="Icon" />
                             <span className='text-gray-500 text-lg'>Unconditional Love - Adopted pets are grateful and loyal companions.</span>
                         </div>
                     </div>

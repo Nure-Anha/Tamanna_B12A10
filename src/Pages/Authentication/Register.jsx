@@ -123,7 +123,7 @@ const Register = () => {
             <div className="hero  min-h-screen">
                 <div className="hero-content flex-col lg:flex-row-reverse bg-white p-10 rounded-2xl shadow-xl">
                     <div>
-                        <h1 className="text-5xl font-bold mb-5">Sign Up!</h1>
+                        <h1 className="text-5xl font-bold mb-5 dark:text-black">Sign Up!</h1>
                         <p className='text-gray-500'><span className='font-semibold text-lg'>PawsNest - Pet Adoption & Supply Portal</span> <br />It is a community-driven platform where pet owners,  breeders, <br /> and shops can list pets for adoption or <br /> sell pet-related products (food, toys, accessories, etc). Buyers and <br /> adopters can browse, contact, and order directly. </p>
                     </div>
 
@@ -146,7 +146,7 @@ const Register = () => {
                                         <button className="btn btn-neutral mt-4">Register</button>
 
 
-                                       <button onClick={handleGoogleSignUp} className="btn mt-4 text-gray-700"><FcGoogle className='text-xl'></FcGoogle>Sign Up With Google</button> 
+                                       <button type='button' onClick={handleGoogleSignUp} className="btn mt-4 text-gray-700"><FcGoogle className='text-xl'></FcGoogle>Sign Up With Google</button> 
                                     </fieldset>
                                 </form>
                                 <p className='text-md font-medium text-center'>Already have an account? <Link className='text-blue-600 font-bold' to={'/login'}>Login here </Link></p>

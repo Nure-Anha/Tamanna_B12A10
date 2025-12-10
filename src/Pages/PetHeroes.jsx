@@ -39,7 +39,7 @@ const PetHeroes = () => {
         {petHeroes.map((i, index) => (
           <div key={index} className='bg-white shadow-2xl p-5 rounded-xl text-center'>
             <img className='w-24 mx-auto rounded-full mb-4 object-cover' src={i.image} alt={i.name} />
-            <h3 className='text-xl font-bold'>{i.name}</h3>
+            <h3 className='text-xl font-bold dark:text-black'>{i.name}</h3>
             <p className='text-gray-500 mb-2'>{i.role}</p>
             <p className='text-gray-600 text-sm'>{i.bio}</p>
           </div>

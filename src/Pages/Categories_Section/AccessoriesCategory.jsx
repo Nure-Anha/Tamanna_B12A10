@@ -20,7 +20,7 @@ const AccessoriesCategory = () => {
                 </div>
             }
     return (
-        <div className='p-10 bg-[#f1f6fa] text-black pb-30'>
+        <div className='p-10 bg-[#f1f6fa]  pb-30'>
             <title>Pets Accessories</title>
             
             <h3 className='text-center font-bold text-5xl mb-15 mt-5 text-black'>All Your Pets Accessories</h3>
@@ -34,7 +34,7 @@ const AccessoriesCategory = () => {
                     </figure>
 
                     <div className="card-body">
-                        <h2 className="card-title mx-auto text-xl font-bold">{i?.name} </h2>
+                        <h2 className="card-title mx-auto text-xl font-bold text-base-content">{i?.name} </h2>
                         <div className='flex justify-between space-x-10'>
                             <p className='text-gray-400 font-semibold'>Category: {i?.category} </p>
                             <p className='text-gray-400 font-semibold'>Location: {i?.location} </p>

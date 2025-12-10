@@ -44,7 +44,7 @@ export const allData = [
                     Healthy and checked by a licensed vet.
                     Bright blue eyes and elegant appearance.
                     Best for loving indoor homes.`,
-        imageURL: "https://i.ibb.co.com/Y4bXGMB4/Siamese-Kitten.jpg",
+        imageURL: "https://i.ibb.co.com/W49b7xFC/Siamese-Kitten.jpg",
         pickupdate: "2025-01-18",
         email: "mirajulislam987@gmail.com" ,
         createdAt: new Date("2025-12-02T12:00:00Z")

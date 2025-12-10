@@ -82,7 +82,7 @@ const Login = () => {
             <div className="hero  min-h-screen">
                 <div className="hero-content flex-col  bg-white md:w-100 lg:w-150 p-10 rounded-2xl shadow-xl">
                     <div>
-                        <h1 className="text-5xl font-bold mb-5">Login now!</h1>
+                        <h1 className="text-5xl font-bold mb-5 dark:text-black">Login now!</h1>
                     </div>
 
                     <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
@@ -97,7 +97,7 @@ const Login = () => {
 
                                 <button className="btn btn-neutral mt-4">Login</button>
 
-                                <button onClick={handleGoogleSignIn} className="btn mt-4 text-gray-700"><FcGoogle className='text-xl'></FcGoogle>Login With Google</button> 
+                                <button type='button' onClick={handleGoogleSignIn} className="btn mt-4 text-gray-700"><FcGoogle className='text-xl'></FcGoogle>Login With Google</button> 
                             </fieldset>
                         </form>
                         <p className='text-md font-medium text-center'>Don't have an account?<Link className='text-blue-600 font-bold' to={'/register'}> Register here</Link></p>
