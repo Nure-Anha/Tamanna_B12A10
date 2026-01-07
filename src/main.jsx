@@ -24,6 +24,7 @@ import MyListings from './Pages/MyListings.jsx';
 import UpdateLisitngs from './Pages/UpdateLisitngs.jsx';
 import MyOrders from './Pages/MyOrders.jsx';
 import PrivateRoute from './Pages/PrivateRoute.jsx';
+import About from './Pages/About.jsx';
 
 
 const router = createBrowserRouter([
@@ -42,6 +43,7 @@ const router = createBrowserRouter([
       {path:'login' , Component:Login} ,
       {path:'register' , Component:Register} ,
       {path:'petsAndsupplies' , Component:PetsAndSupplies} ,
+      {path:'about' , Component:About} ,
       {path:'fulldata' , Component:FullData} ,
       {path:'listingdetails/:id' , element: <PrivateRoute> <ListingDetails></ListingDetails> </PrivateRoute>} ,
       {path:'mylistings' , element: <PrivateRoute> <MyListings></MyListings> </PrivateRoute>} ,
