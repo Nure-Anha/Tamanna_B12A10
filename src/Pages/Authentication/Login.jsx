@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router';
 import { AuthContext } from './Auth/AuthContext';
 import { FcGoogle } from 'react-icons/fc';
@@ -13,6 +13,9 @@ const Login = () => {
     // Reload dile again Login e niye jay -- solutn
     const location = useLocation() ;
     const LoadingPageNavigate = useNavigate() ;
+
+    const [error, setError] = useState('');
+
 
 
     // handleLogin
@@ -39,11 +42,12 @@ const Login = () => {
         .catch(errsigninE => {
             console.log("Error Code :", errsigninE.code) ;
             console.log("Error Message :", errsigninE.message) ;
-            Swal.fire({
-            icon: "error",
-            title: "Oops...",
-            text: "Something went wrong"
-            });
+            // Swal.fire({
+            // icon: "error",
+            // title: "Oops...",
+            // text: "Something went wrong"
+            // });
+            setError()
         })
     }
 

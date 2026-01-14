@@ -30,9 +30,9 @@ const CategoriesBtn = () => {
 
 
     return (
-        <div className='p-8 md:p-16 lg:p-20 pb-10 '>
-            <p className='text-center font-bold text-5xl text-black'>Shop By Categories</p>
-            <div className='mt-15 flex flex-wrap justify-center items-center gap-10'>
+        <div className='p-8 md:p-16 lg:pt-25'>
+            <p className='text-center font-bold text-3xl text-black'>Shop By Categories</p>
+            <div className='mt-5 flex flex-wrap justify-center items-center gap-10'>
                 <div onClick={handlePetCategories}>
                     <button className='btn bg-[#b9dff5] p-20 rounded-2xl border-0'><img className='w-18 bg-transparent' src="/my_assets/pet.png" alt="" /></button>
                     <p className='text-center mt-5 font-semibold text-gray-700'>Pets (Adoption) </p>

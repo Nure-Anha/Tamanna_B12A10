@@ -4,6 +4,11 @@ import CategoriesBtn from '../Pages/Categories_Section/CategoriesBtn';
 import RecentListings from '../Pages/RecentListings';
 import WhyAdopt from '../Pages/WhyAdopt';
 import PetHeroes from '../Pages/PetHeroes';
+import AdoptionProcess from '../Pages/AdoptionProcess';
+import Stats from '../Pages/Stats';
+import Testimonials from '../Pages/Testimonials';
+import FAQ from '../Pages/FAQ';
+import News from '../Pages/News';
 
 const Home = () => {
     return (
@@ -14,8 +19,13 @@ const Home = () => {
             <Slider></Slider>
             <CategoriesBtn></CategoriesBtn>
             <RecentListings></RecentListings>
+            <AdoptionProcess></AdoptionProcess>
             <WhyAdopt></WhyAdopt>
+            <Stats></Stats>
+            <Testimonials></Testimonials>
             <PetHeroes></PetHeroes>
+            <FAQ></FAQ>
+            <News></News>
 
         </div>
     );

@@ -25,6 +25,15 @@ import UpdateLisitngs from './Pages/UpdateLisitngs.jsx';
 import MyOrders from './Pages/MyOrders.jsx';
 import PrivateRoute from './Pages/PrivateRoute.jsx';
 import About from './Pages/About.jsx';
+import AdoptionProcess from './Pages/AdoptionProcess.jsx';
+import Stats from './Pages/Stats.jsx';
+import Testimonials from './Pages/Testimonials.jsx';
+import FAQ from './Pages/FAQ.jsx';
+import News from './Pages/News.jsx';
+import TermsPolicy from './Pages/TermsPolicy.jsx';
+import ContactUs from './Pages/ContactUs.jsx';
+import Services from './Pages/Services.jsx';
+import Returns from './Pages/Returns.jsx';
 
 
 const router = createBrowserRouter([
@@ -39,13 +48,22 @@ const router = createBrowserRouter([
       {path:'foodcategory' , Component:FoodCategory} ,
       {path:'accessoriescategory' , Component:AccessoriesCategory} ,
       {path:'careprodcategory' , Component:CareProdCategory} ,
+      {path:'adoptionprocess' , Component:AdoptionProcess} ,
+      {path:'stats' , Component:Stats} ,
+      {path:'testimonials' , Component:Testimonials} ,
+      {path:'faq' , Component:FAQ} ,
+      {path:'news' , Component:News} ,
+      {path:'termspolicy' , Component:TermsPolicy} ,
+      {path:'contactus' , Component:ContactUs} ,
+      {path:'services' , Component:Services} ,
+      {path:'returns' , Component:Returns} ,
       {path:'addlisting' , element: <PrivateRoute> <AddListing></AddListing> </PrivateRoute>} ,
       {path:'login' , Component:Login} ,
       {path:'register' , Component:Register} ,
       {path:'petsAndsupplies' , Component:PetsAndSupplies} ,
       {path:'about' , Component:About} ,
       {path:'fulldata' , Component:FullData} ,
-      {path:'listingdetails/:id' , element: <PrivateRoute> <ListingDetails></ListingDetails> </PrivateRoute>} ,
+      {path:'listingdetails/:id' , element: <ListingDetails></ListingDetails> } ,
       {path:'mylistings' , element: <PrivateRoute> <MyListings></MyListings> </PrivateRoute>} ,
       {path:'updatelistings/:id' , Component:UpdateLisitngs} ,  
       {path:'myorders' , element: <PrivateRoute> <MyOrders></MyOrders> </PrivateRoute>} ,  
