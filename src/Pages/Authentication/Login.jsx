@@ -16,18 +16,29 @@ const Login = () => {
 
     const [error, setError] = useState('');
 
+    // demo creditials
+    const [email, setEmail] = useState('');
+    const [pass, setPass] = useState('');
+
+    // show pass
+    const [showPass, setShowPass] = useState(false);
+    const handleShowPass = () => {
+        setShowPass(!showPass) ;
+    }
+
 
 
     // handleLogin
     const handleLogin = (e) => {
         e.preventDefault() ;
 
-        const email = e.target.email.value ;
-        console.log("email:", email) ;
-        const pass = e.target.pass.value ;
-        console.log("pass:", pass) ;
+        // const email = e.target.email.value ;
+        // console.log("email:", email) ;
+        // const pass = e.target.pass.value ;
+        // console.log("pass:", pass) ;
 
 
+        setError('') ;
         // signinwithEmailPass
         signinwithEmailPass(email , pass)
         .then(signinE => {
@@ -47,7 +58,7 @@ const Login = () => {
             // title: "Oops...",
             // text: "Something went wrong"
             // });
-            setError()
+            setError(errsigninE.message) ;
         })
     }
 
@@ -94,10 +105,31 @@ const Login = () => {
                         <form onSubmit={handleLogin}>
                             <fieldset className="fieldset">
                                 <label className="label">Email</label>
-                                <input type="email" name='email' className="input" placeholder="Email" />
+                                <input onChange={e => setEmail(e.target.value)} type="email" name='email' value={email} className="input" placeholder="Email" />
                                 <label className="label">Password</label>
-                                <input type="password" name='pass' className="input" placeholder="Password" />
+                                <input onChange={(e) => setPass(e.target.value)} type={showPass ? "text" : "password"} name='pass' className="input" placeholder="Password" />
+                                <button
+                                    type="button" onClick={handleShowPass}
+                                    className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500">
+                                    {showPass ? <faEyeSlash></faEyeSlash> : <faEye></faEye>}
+                                </button>
                                 <div><a className="link link-hover">Forgot password?</a></div>
+                                {
+                                    error && <p className='text-red-500'> {error} </p>
+                                }
+
+                                {/* demo login */}
+                                <div className="mt-4 space-y-2">
+                                    <button
+                                        type="button"
+                                        onClick={() => {
+                                        setEmail("demo@pawsnest.com");
+                                        setPass("Demo1234");
+                                        }}
+                                        className="btn btn-outline w-full">
+                                        Login as Demo User
+                                    </button>
+                                </div>
 
                                 <button className="btn btn-neutral mt-4">Login</button>
 

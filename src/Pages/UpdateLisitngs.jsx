@@ -85,7 +85,7 @@ const UpdateLisitngs = () => {
         console.log("updateFormData Items :", updateFormData) ;
 
         // put updated data to backend
-        axios.put(`https://tamanna-b12a10-backend.vercel.app/updatelistings/${IDofParam}` , updateFormData)  //sending data to backend
+        axios.put(`http://localhost:3000/dashboard/updatelistings/${IDofParam}` , updateFormData)  //sending data to backend
         .then(resUpdateFormData => {
             console.log("resUpdateFormData :" , resUpdateFormData) ;
         })
@@ -141,7 +141,7 @@ const UpdateLisitngs = () => {
                                     <input type="email" name='email' value={user?.email} className="input" readOnly />
 
                                     
-                                    <button className="btn btn-neutral mt-4 w-80">Update Changes</button>
+                                    <button className="btn bg-sky-500 text-white mt-4 w-80">Update Changes</button>
                                 </fieldset>
                             </form>
                         </div>

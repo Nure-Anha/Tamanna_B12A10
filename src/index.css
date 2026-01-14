@@ -5,6 +5,7 @@
 li a.active{
     text-decoration: underline;
     color:#10B981;
+    font-weight: bold;
 }
 
 .footer_title_heading {

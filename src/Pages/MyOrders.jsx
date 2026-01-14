@@ -71,11 +71,11 @@ const MyOrders = () => {
             </div>
         }
     return (
-        <div className='bg-[#f1f6fa] p-10'>
+        <div className='bg-[#f1f6fa]'>
             <title>My Orders</title>
             
             {
-                myOrdersData.length !== 0 ? <div> <h3 className="text-3xl font-bold mb-5 text-center dark:text-black">My Orders</h3> <button onClick={generatePDF} className=" lg:ml-270 btn bg-green-600 text-white hover:bg-green-800 mb-4">Download PDF Report</button>
+                myOrdersData.length !== 0 ? <div> <h3 className="text-3xl font-bold mb-5 text-center dark:text-black">My Orders</h3> <button onClick={generatePDF} className=" lg:ml-220 p-5 btn bg-green-600 text-white hover:bg-green-800 mb-4">Download PDF Report</button>
             <div className="overflow-x-auto rounded-box border border-base-content/5 bg-base-100">
                 <table className="table">
                     {/* head */}
@@ -108,7 +108,7 @@ const MyOrders = () => {
                     </tbody>
                 </table>
                 </div>
-              </div> : <h3 className='font-bold text-5xl text-center text-red-500'>No Orders Yet!!! !!! </h3>
+              </div> : <h3 className='font-bold mt-20 text-3xl text-center text-red-500'>No Orders Yet!!! </h3>
             }
         </div>
     );

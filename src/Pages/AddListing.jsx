@@ -47,7 +47,7 @@ const AddListing = () => {
             text: "New Item is Added!",
             icon: "success"
         }).then(() => {
-             navigate('/mylistings');
+             navigate('/dashboard/mylistings');
             });
 
 
@@ -65,7 +65,7 @@ const AddListing = () => {
         console.log("addListingFormgData Items :", addListingFormgData) ;
 
         // pass data to backend
-        axios.post('https://tamanna-b12a10-backend.vercel.app/addlisting' , addListingFormgData)  //sending data to backend
+        axios.post('https://tamanna-b12a10-backend.vercel.app/dashboard/addlisting' , addListingFormgData)  //sending data to backend
         .then(resAddListing => {
             console.log("resAddListing :" , resAddListing) ;
         })
@@ -123,7 +123,7 @@ const AddListing = () => {
                                         <input type="email" name='email' value={user?.email} className="input" readOnly />
 
                                         
-                                        <button className="btn btn-neutral mt-4">Save</button>
+                                        <button className="btn bg-sky-500 mt-4">Save</button>
                                     </fieldset>
                                 </form>
                             </div>

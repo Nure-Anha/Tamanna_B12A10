@@ -12,7 +12,7 @@ const Stats = () => {
   
 
   if (!stats) {
-    return <span className="loading loading-dots loading-xl"></span>;
+    return <span className="loading loading-dots loading-xl ml-160"></span>;
   }
 
   return (

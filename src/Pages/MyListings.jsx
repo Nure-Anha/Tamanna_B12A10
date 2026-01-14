@@ -29,7 +29,7 @@ const MyListings = () => {
     // handleUpdateBtn
     const navigate = useNavigate() ;
     const handleUpdateBtn = (id) => {
-        navigate(`/updatelistings/${id}`)
+        navigate(`/dashboard/updatelistings/${id}`)
     }
 
     // handleDelete
@@ -79,7 +79,7 @@ const MyListings = () => {
         <div>
             <title>My Listings</title>
 
-            <div className="bg-[#f1f6fa] p-10 text-black">
+            <div className="bg-[#f1f6fa] text-black">
 
               {
                 myListings_Data.length !== 0 ? <div> <h1 className="text-3xl font-bold mb-5 text-center">My Listings</h1> <div className="overflow-x-auto">
@@ -115,13 +115,13 @@ const MyListings = () => {
                                     <td className='font-medium'>{j.email} </td>
                                     <td className='font-medium'>
                                         <button onClick={()=>handleUpdateBtn(j?._id)} className='btn bg-blue-500  text-white hover:bg-blue-800'>Update</button>
-                                        <button onClick={()=>handleDel(j?._id)} className='btn ml-2.5 bg-red-500 hover:bg-red-700 text-white'>Delete</button>
+                                        <button onClick={()=>handleDel(j?._id)} className='btn p-4.5 ml-0 bg-red-400 hover:bg-red-700 text-white'>Delete</button>
                                     </td>
                                 </tr>)
                                 }
                             </tbody>
                         </table>
-                </div> </div> : <h3 className='font-bold text-5xl text-center text-red-500'>No List is Added Yet</h3>
+                </div> </div> : <h3 className='font-bold mt-20 text-3xl text-center text-red-500'>No List is Added Yet</h3>
               }
 
             </div>

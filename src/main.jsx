@@ -34,6 +34,10 @@ import TermsPolicy from './Pages/TermsPolicy.jsx';
 import ContactUs from './Pages/ContactUs.jsx';
 import Services from './Pages/Services.jsx';
 import Returns from './Pages/Returns.jsx';
+import DashboardLayout from './Layouts/DashboardLayout.jsx';
+import DashboardHome from './Dashboard/DashboardHome.jsx';
+import AdoptionTips from './Components/AdoptionTips.jsx';
+import Blog from './Components/Blog.jsx';
 
 
 const router = createBrowserRouter([
@@ -57,19 +61,33 @@ const router = createBrowserRouter([
       {path:'contactus' , Component:ContactUs} ,
       {path:'services' , Component:Services} ,
       {path:'returns' , Component:Returns} ,
-      {path:'addlisting' , element: <PrivateRoute> <AddListing></AddListing> </PrivateRoute>} ,
+      // {path:'/dashboard/addlisting' , element: <PrivateRoute> <AddListing></AddListing> </PrivateRoute>} ,
+      {path:'/adoptiontips' , element: <PrivateRoute> <AdoptionTips></AdoptionTips> </PrivateRoute>} ,
+      {path:'/blog' , element: <PrivateRoute> <Blog></Blog> </PrivateRoute>} ,
       {path:'login' , Component:Login} ,
       {path:'register' , Component:Register} ,
       {path:'petsAndsupplies' , Component:PetsAndSupplies} ,
       {path:'about' , Component:About} ,
       {path:'fulldata' , Component:FullData} ,
       {path:'listingdetails/:id' , element: <ListingDetails></ListingDetails> } ,
-      {path:'mylistings' , element: <PrivateRoute> <MyListings></MyListings> </PrivateRoute>} ,
-      {path:'updatelistings/:id' , Component:UpdateLisitngs} ,  
-      {path:'myorders' , element: <PrivateRoute> <MyOrders></MyOrders> </PrivateRoute>} ,  
+      // {path:'/dashboard/mylistings' , element: <PrivateRoute> <MyListings></MyListings> </PrivateRoute>} ,
+      // {path:'/dashboard/updatelistings/:id' , Component:UpdateLisitngs} ,  
+      // {path:'/dashboard/myorders' , element: <PrivateRoute> <MyOrders></MyOrders> </PrivateRoute>} ,  
       
     ]
   },
+
+  {
+    path: 'dashboard' ,
+    element: <PrivateRoute><DashboardLayout></DashboardLayout></PrivateRoute> ,
+    children: [
+      {index:true , Component: DashboardHome} ,
+      {path:'/dashboard/addlisting' , Component: AddListing} ,
+      {path:'/dashboard/mylistings' , Component: MyListings} ,
+      {path:'/dashboard/updatelistings/:id' , Component:UpdateLisitngs} ,  
+      {path:'/dashboard/myorders' , Component: MyOrders} , 
+    ]
+  }
 ]);
 
 createRoot(document.getElementById('root')).render(
