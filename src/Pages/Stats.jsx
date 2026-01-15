@@ -4,7 +4,7 @@ const Stats = () => {
   const [stats, setStats] = useState(null);
 
   useEffect(() => {
-    fetch("http://localhost:3000/stats")
+    fetch("https://tamanna-b12a10-backend.vercel.app/stats")
       .then(res => res.json())
       .then(data => setStats(data));
   }, []);
