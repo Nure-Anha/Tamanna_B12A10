@@ -38,7 +38,7 @@ const Footer = () => {
 
             <nav>
                     <h6 className="footer_title_heading">Orders & Retruns</h6>
-                    <Link to="/myorders" className="hover:text-green-400">Track Order</Link>
+                    <Link to="/dashboard/myorders" className="hover:text-green-400">Track Order</Link>
                     <Link to="/services" className="hover:text-green-400">Services</Link>
                     <Link to="/returns" className="hover:text-green-400">Returns</Link>
             </nav>

@@ -2,7 +2,7 @@ import React from "react";
 
 const Blog = () => {
   return (
-    <div className="max-w-6xl mx-auto px-4 p-20">
+    <div className="max-w-6xl mx-auto px-10 py-30 lg:p-20">
       <h1 className="text-4xl font-bold mb-6 text-center">Pet Blog</h1>
       <p className="text-gray-700 mb-4">
         Welcome to our pet blog! Here we share stories, tips, and guides for pet lovers.

@@ -3,7 +3,7 @@ import React from 'react';
 const About = () => {
     return (
         <div>
-            <div className="min-h-screen pt-24 pb-10 px-4 bg-[#f1f6fa]">
+            <div className="min-h-screen pt-34 lg:pt-24 pb-10 px-4 bg-[#f1f6fa]">
                 <div className="ml-15 mr-15 mx-auto">
                     <div className="text-center mb-12">
                         <h1 className="text-4xl font-bold mb-4 text-black">About PawsNest</h1>

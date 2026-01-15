@@ -1,6 +1,6 @@
 const FAQ = () => {
   return (
-    <section className="py-16 bg-white">
+    <section className="py-30 lg:py-16 bg-white">
       <div className="max-w-4xl mx-auto px-4">
         <div className="flex justify-center items-center">
             <h2 className="text-3xl font-bold text-center mt-5 mb-8 text-black">Frequently Asked Questions</h2>

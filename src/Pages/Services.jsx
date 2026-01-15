@@ -3,7 +3,7 @@ import { FaPaw, FaHeart, FaHome, FaUserShield, FaSearch, FaHandsHelping } from "
 
 const Services = () => {
   return (
-    <section className="min-h-screen bg-[#f1f6fa] mt-10 py-16 px-6">
+    <section className="min-h-screen bg-[#f1f6fa] mt-10 py-30 lg:py-16 px-6">
       <div className="max-w-6xl mx-auto">
 
         {/* Heading */}

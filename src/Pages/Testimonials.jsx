@@ -1,6 +1,6 @@
 const Testimonials = () => {
   return (
-    <section className="py-16 bg-[#d8e9f7]">
+    <section className="py-30 lg:py-16 bg-[#d8e9f7]">
       <div className="max-w-6xl mx-auto px-4">
         <div className="flex justify-center items-center">
             <h2 className="text-3xl font-bold text-center mt-5 mb-10 text-black">What Our Users Say</h2>

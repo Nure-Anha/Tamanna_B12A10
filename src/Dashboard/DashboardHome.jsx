@@ -71,19 +71,18 @@ const DashboardHome = () => {
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
 
-                {/* Total Listings */}
+             
                 <div className="bg-white p-6 rounded-xl shadow">
                 <p className="text-gray-500 text-sm">Total Listings</p>
                 <h2 className="text-3xl font-bold mt-2 text-black">{myListings.length}</h2>
                 </div>
 
-                {/* Total Orders */}
                 <div className="bg-white p-6 rounded-xl shadow">
                 <p className="text-gray-500 text-sm">Total Orders</p>
                 <h2 className="text-3xl font-bold mt-2 text-black">{myOrders.length}</h2>
                 </div>
 
-                {/* Calculate total spent */}
+            
                 <div className="bg-white p-6 rounded-xl shadow">
                     <p className="text-gray-500 text-sm">Total Spent in Orders</p>
                     <h2 className="text-3xl font-bold mt-2 text-black">
@@ -92,7 +91,6 @@ const DashboardHome = () => {
                 </div>
 
 
-                {/* Account Status */}
                 <div className="bg-white p-6 rounded-xl shadow">
                 <p className="text-gray-500 text-sm">Account Status</p>
                 <h2 className="text-2xl font-semibold mt-2 text-green-600">
@@ -120,6 +118,45 @@ const DashboardHome = () => {
                 </BarChart>
             </ResponsiveContainer>
         </div>
+
+
+
+        <div className="mt-35 bg-white p-6 rounded-xl shadow">
+          <h2 className="text-xl font-bold mb-4 text-black">My Recent Listings</h2>
+
+          {myListings.length === 0 ? (
+            <p className="text-red-500">No listings found!!!</p>
+          ) : (
+            <div className="overflow-x-auto">
+              <table className="table w-full">
+                <thead>
+                  <tr className="bg-gray-100">
+                    <th>#</th>
+                    <th className="text-gray-500">Pet Name</th>
+                    <th className="text-gray-500">Category</th>
+                    <th className="text-gray-500">Price</th>
+                    <th className="text-gray-500">Date</th>
+                  </tr>
+                </thead>
+
+                <tbody>
+                  {myListings.slice(0, 5).map((item, index) => (
+                    <tr key={item._id} className="hover">
+                      <td className="text-black">{index + 1}</td>
+                      <td className="text-black">{item.name}</td>
+                      <td className="text-black">{item.category}</td>
+                      <td className="text-black">{item.price} BDT</td>
+                      <td className="text-black">
+                        {new Date(item.createdAt).toLocaleDateString()}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          )}
+        </div>
+
 
     </div>
   );

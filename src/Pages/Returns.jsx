@@ -2,7 +2,7 @@ import React from "react";
 
 const Returns = () => {
   return (
-    <section className="min-h-screen bg-[#f1f6fa] py-16 px-6">
+    <section className="min-h-screen bg-[#f1f6fa] py-30 lg:py-16 px-6">
       <div className="max-w-5xl mx-auto bg-white rounded-xl shadow-md p-8">
 
         <h1 className="text-4xl font-bold text-center text-black mb-6">

@@ -2,7 +2,7 @@ import React from "react";
 
 const AdoptionTips = () => {
   return (
-    <div className="max-w-6xl mx-auto px-4 p-20">
+    <div className="max-w-6xl mx-auto  px-15 py-30 lg:p-20">
       <h1 className="text-3xl font-bold mb-6 text-center">Adoption Tips</h1>
       <p className="text-gray-700 mb-4">
         Adopting a pet is a big decision! Here are some tips to make it smooth:

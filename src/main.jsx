@@ -38,6 +38,7 @@ import DashboardLayout from './Layouts/DashboardLayout.jsx';
 import DashboardHome from './Dashboard/DashboardHome.jsx';
 import AdoptionTips from './Components/AdoptionTips.jsx';
 import Blog from './Components/Blog.jsx';
+import Profile from './Dashboard/Profile.jsx';
 
 
 const router = createBrowserRouter([
@@ -86,6 +87,7 @@ const router = createBrowserRouter([
       {path:'/dashboard/mylistings' , Component: MyListings} ,
       {path:'/dashboard/updatelistings/:id' , Component:UpdateLisitngs} ,  
       {path:'/dashboard/myorders' , Component: MyOrders} , 
+      {path:'/dashboard/profile' , Component: Profile} , 
     ]
   }
 ]);

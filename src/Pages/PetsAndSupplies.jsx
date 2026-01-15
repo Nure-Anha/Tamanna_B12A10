@@ -92,7 +92,7 @@ const PetsAndSupplies = () => {
             <h3 className='text-center font-bold text-3xl mb-15 mt-5 text-black'>All your Pets & Supplies!</h3>
 
             
-            <div className="flex space-x-20 mb-5">
+            <div className=" flex-col lg:flex-row lg:space-x-20 mb-5">
                 <label className="input">
                     <svg className="h-[1em] opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                         <g
